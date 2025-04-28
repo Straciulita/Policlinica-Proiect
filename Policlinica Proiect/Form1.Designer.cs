@@ -37,7 +37,7 @@ namespace Policlinica_Proiect
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -65,7 +65,7 @@ namespace Policlinica_Proiect
             this.roundedPanel.Controls.Add(this.button2);
             this.roundedPanel.Controls.Add(this.button1);
             this.roundedPanel.Controls.Add(this.passwordTextBox);
-            this.roundedPanel.Controls.Add(this.textBox1);
+            this.roundedPanel.Controls.Add(this.textBoxUsername);
             this.roundedPanel.Controls.Add(this.label4);
             this.roundedPanel.Controls.Add(this.label3);
             this.roundedPanel.Controls.Add(this.label2);
@@ -88,6 +88,7 @@ namespace Policlinica_Proiect
             this.button2.TabIndex = 5;
             this.button2.Text = "Pacient";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -111,13 +112,13 @@ namespace Policlinica_Proiect
             this.passwordTextBox.TabIndex = 0;
             this.passwordTextBox.UseSystemPasswordChar = true;
             // 
-            // textBox1
+            // textBoxUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(186, 93);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(293, 22);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "Username";
+            this.textBoxUsername.Location = new System.Drawing.Point(186, 93);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(293, 22);
+            this.textBoxUsername.TabIndex = 3;
+            this.textBoxUsername.Text = "Username";
             // 
             // label4
             // 
@@ -177,7 +178,7 @@ namespace Policlinica_Proiect
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxUsername;
         private TextBox passwordTextBox;
         private Button button1;
         private Button button2;

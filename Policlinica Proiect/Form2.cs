@@ -12,9 +12,11 @@ namespace Policlinica_Proiect
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        String perspectiva;
+        public Form2(string perspectiva)
         {
             InitializeComponent();
+            this.perspectiva = perspectiva;
         }
     }
 }
