@@ -16,5 +16,27 @@ namespace Policlinica_Proiect
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Creăm o instanță a clasei DatabaseConnection
+            DatabaseConnection dbConnection = new DatabaseConnection();
+
+            // Obținem conexiunea la baza de date
+            MySql.Data.MySqlClient.MySqlConnection connection = dbConnection.GetConnection();
+
+            if (connection != null)
+            {
+                // Aici poți adăuga alte operații dacă vrei să lucrezi cu baza de date
+
+                // Închidem conexiunea după ce am terminat
+                dbConnection.CloseConnection(connection);
+            }
+            else
+            {
+                MessageBox.Show("Conexiunea la baza de date a eșuat!");
+            }
+        }
+
     }
 }
