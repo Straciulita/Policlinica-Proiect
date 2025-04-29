@@ -73,6 +73,16 @@ namespace Policlinica_Proiect.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ceas {
+            get {
+                object obj = ResourceManager.GetObject("ceas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap creier {
             get {
                 object obj = ResourceManager.GetObject("creier", resourceCulture);
@@ -113,9 +123,29 @@ namespace Policlinica_Proiect.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lupa {
+            get {
+                object obj = ResourceManager.GetObject("lupa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap medical_care {
             get {
                 object obj = ResourceManager.GetObject("medical-care", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap meniu {
+            get {
+                object obj = ResourceManager.GetObject("meniu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

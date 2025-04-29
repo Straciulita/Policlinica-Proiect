@@ -13,6 +13,8 @@ namespace Policlinica_Proiect
     public partial class Form1 : Form
     {
         String perspectiva;
+        // Creăm o instanță a clasei DatabaseConnection
+        DatabaseConnection dbConnection = new DatabaseConnection();
         public Form1()
         {
             InitializeComponent();
@@ -27,8 +29,7 @@ namespace Policlinica_Proiect
                 return; // Oprim execuția dacă lipsesc date
             }
 
-            // Creăm o instanță a clasei DatabaseConnection
-            DatabaseConnection dbConnection = new DatabaseConnection();
+           
 
             // Obținem conexiunea la baza de date
             MySql.Data.MySqlClient.MySqlConnection connection = dbConnection.GetConnection();
@@ -77,6 +78,8 @@ namespace Policlinica_Proiect
             {
                 MessageBox.Show("Conexiunea la baza de date a eșuat!");
             }
+
+            dbConnection.CloseConnection(connection);
         }
 
         private void button2_Click(object sender, EventArgs e)

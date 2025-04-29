@@ -173,5 +173,17 @@
   <ItemGroup>
     <None Include="Resources\creier.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meniu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ceas.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
