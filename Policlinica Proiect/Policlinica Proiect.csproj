@@ -149,5 +149,29 @@
   <ItemGroup>
     <None Include="Resources\medical-care.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\poza-300x300.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inima.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\personal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ekg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rapoarte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\care.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\creier.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

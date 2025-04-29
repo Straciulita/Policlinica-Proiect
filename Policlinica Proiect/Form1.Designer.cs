@@ -118,7 +118,6 @@ namespace Policlinica_Proiect
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(293, 22);
             this.textBoxUsername.TabIndex = 3;
-            this.textBoxUsername.Text = "Username";
             // 
             // label4
             // 
