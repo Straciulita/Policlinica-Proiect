@@ -12,7 +12,6 @@ namespace Policlinica_Proiect
     internal class Comune
     {
 
-
         public void AfiseazaTabela(string numeTabela, DataGridView dgv, MySqlConnection conn)
         {
             try

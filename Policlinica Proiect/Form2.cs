@@ -97,7 +97,7 @@ namespace Policlinica_Proiect
 
         private void buttonPersonal_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 0;
+            
             admin.Controls.Clear(); 
             UserControlPersonalcs pv = new UserControlPersonalcs();
             pv.Dock = DockStyle.Fill;
@@ -106,12 +106,12 @@ namespace Policlinica_Proiect
 
         private void buttonPacienti_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 1;
+            
         }
 
         private void buttonProgram_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 2;
+            
         }
 
         private void buttonMeniu_Click(object sender, EventArgs e)

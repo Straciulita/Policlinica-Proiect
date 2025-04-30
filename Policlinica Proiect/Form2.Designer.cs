@@ -50,6 +50,7 @@ namespace Policlinica_Proiect
             this.buttonMeniu = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.admin = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -281,6 +282,14 @@ namespace Policlinica_Proiect
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // admin
+            // 
+            this.admin.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.admin.Location = new System.Drawing.Point(-2, 93);
+            this.admin.Name = "admin";
+            this.admin.Size = new System.Drawing.Size(2500, 1047);
+            this.admin.TabIndex = 3;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -288,6 +297,7 @@ namespace Policlinica_Proiect
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.admin);
             this.Controls.Add(this.panel1);
             this.Name = "Form2";
             this.Text = "Sanavita";
@@ -319,5 +329,6 @@ namespace Policlinica_Proiect
         private Button buttonMeniu;
         private Button button2;
         private Panel panel6;
+        private Panel admin;
     }
 }
