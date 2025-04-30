@@ -98,6 +98,10 @@ namespace Policlinica_Proiect
         private void buttonPersonal_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 0;
+            admin.Controls.Clear(); 
+            UserControlPersonalcs pv = new UserControlPersonalcs();
+            pv.Dock = DockStyle.Fill;
+            admin.Controls.Add(pv);
         }
 
         private void buttonPacienti_Click(object sender, EventArgs e)
@@ -125,15 +129,8 @@ namespace Policlinica_Proiect
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AfiseazaTabela("Personal", dataGridView1, connection);
-        }
+        
 
-        private void buttonSearch_Click(object sender, EventArgs e)
-        {
-            string cautare = textBoxSearch.Text.Trim();
-            CautaPersonal(cautare, dataGridView1, connection);
-        }
+        
     }
 }
