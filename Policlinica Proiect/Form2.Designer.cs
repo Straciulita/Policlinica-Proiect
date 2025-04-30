@@ -51,8 +51,10 @@ namespace Policlinica_Proiect
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.admin = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.admin.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -285,10 +287,22 @@ namespace Policlinica_Proiect
             // admin
             // 
             this.admin.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.admin.Controls.Add(this.label3);
             this.admin.Location = new System.Drawing.Point(-2, 93);
             this.admin.Name = "admin";
             this.admin.Size = new System.Drawing.Size(2500, 1047);
             this.admin.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label3.Location = new System.Drawing.Point(834, 143);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(489, 91);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Bine ai venit!";
             // 
             // Form2
             // 
@@ -306,6 +320,8 @@ namespace Policlinica_Proiect
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.admin.ResumeLayout(false);
+            this.admin.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -330,5 +346,6 @@ namespace Policlinica_Proiect
         private Button button2;
         private Panel panel6;
         private Panel admin;
+        private Label label3;
     }
 }
