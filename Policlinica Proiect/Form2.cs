@@ -36,6 +36,9 @@ namespace Policlinica_Proiect
             timer1.Interval = 1000; // la fiecare secundă
             timer1.Tick += Timer1_Tick;
             timer1.Start();
+
+           
+
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
@@ -53,10 +56,11 @@ namespace Policlinica_Proiect
         private void buttonPersonal_Click(object sender, EventArgs e)
         {
             
-            admin.Controls.Clear(); 
+            main.Controls.Clear(); 
+            panel4.Visible = false; // ascunde panelul 4
             UserControlPersonalcs pv = new UserControlPersonalcs();
             pv.Dock = DockStyle.Fill;
-            admin.Controls.Add(pv);
+            main.Controls.Add(pv);
         }
 
         private void buttonPacienti_Click(object sender, EventArgs e)
@@ -71,16 +75,13 @@ namespace Policlinica_Proiect
 
         private void buttonMeniu_Click(object sender, EventArgs e)
         {
-            clickCount++;
-            if (clickCount % 2 == 1)
+           if(panel4.Visible == false)
             {
-                panel4.Visible = true;
-
-
+                panel4.Visible = true; // arată panelul 4
             }
             else
             {
-                panel4.Visible = false;
+                panel4.Visible = false; // ascunde panelul 4
             }
         }
 

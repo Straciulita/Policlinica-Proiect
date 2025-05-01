@@ -34,9 +34,13 @@ namespace Policlinica_Proiect
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.labelOraData = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonMeniu = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -46,15 +50,11 @@ namespace Policlinica_Proiect
             this.buttonPacienti = new System.Windows.Forms.Button();
             this.buttonPersonal = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.buttonMeniu = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.admin = new System.Windows.Forms.Panel();
+            this.main = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.admin.SuspendLayout();
+            this.main.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -71,6 +71,15 @@ namespace Policlinica_Proiect
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2076, 86);
             this.panel1.TabIndex = 0;
+            // 
+            // panel6
+            // 
+            this.panel6.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.ceas;
+            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel6.Location = new System.Drawing.Point(1483, 15);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(62, 57);
+            this.panel6.TabIndex = 6;
             // 
             // labelOraData
             // 
@@ -94,6 +103,27 @@ namespace Policlinica_Proiect
             this.label2.TabIndex = 3;
             this.label2.Text = "Policlinica Sanavita";
             // 
+            // buttonMeniu
+            // 
+            this.buttonMeniu.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.buttonMeniu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonMeniu.Image = ((System.Drawing.Image)(resources.GetObject("buttonMeniu.Image")));
+            this.buttonMeniu.Location = new System.Drawing.Point(24, 10);
+            this.buttonMeniu.Name = "buttonMeniu";
+            this.buttonMeniu.Size = new System.Drawing.Size(100, 68);
+            this.buttonMeniu.TabIndex = 5;
+            this.buttonMeniu.UseVisualStyleBackColor = false;
+            this.buttonMeniu.Click += new System.EventHandler(this.buttonMeniu_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.inima;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Location = new System.Drawing.Point(731, 10);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(76, 62);
+            this.panel3.TabIndex = 2;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -103,6 +133,16 @@ namespace Policlinica_Proiect
             this.label1.Size = new System.Drawing.Size(64, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.poza_300x300;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(173, 15);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(57, 54);
+            this.panel2.TabIndex = 0;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // timer1
             // 
@@ -244,54 +284,14 @@ namespace Policlinica_Proiect
             this.panel5.Size = new System.Drawing.Size(80, 74);
             this.panel5.TabIndex = 0;
             // 
-            // panel6
+            // main
             // 
-            this.panel6.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.ceas;
-            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel6.Location = new System.Drawing.Point(1483, 15);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(62, 57);
-            this.panel6.TabIndex = 6;
-            // 
-            // buttonMeniu
-            // 
-            this.buttonMeniu.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.buttonMeniu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonMeniu.Image = ((System.Drawing.Image)(resources.GetObject("buttonMeniu.Image")));
-            this.buttonMeniu.Location = new System.Drawing.Point(24, 10);
-            this.buttonMeniu.Name = "buttonMeniu";
-            this.buttonMeniu.Size = new System.Drawing.Size(100, 68);
-            this.buttonMeniu.TabIndex = 5;
-            this.buttonMeniu.UseVisualStyleBackColor = false;
-            this.buttonMeniu.Click += new System.EventHandler(this.buttonMeniu_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.inima;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(731, 10);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(76, 62);
-            this.panel3.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.poza_300x300;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(173, 15);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(57, 54);
-            this.panel2.TabIndex = 0;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // admin
-            // 
-            this.admin.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.admin.Controls.Add(this.label3);
-            this.admin.Location = new System.Drawing.Point(-2, 93);
-            this.admin.Name = "admin";
-            this.admin.Size = new System.Drawing.Size(2500, 1047);
-            this.admin.TabIndex = 3;
+            this.main.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.main.Controls.Add(this.label3);
+            this.main.Location = new System.Drawing.Point(-2, 93);
+            this.main.Name = "main";
+            this.main.Size = new System.Drawing.Size(2500, 1047);
+            this.main.TabIndex = 3;
             // 
             // label3
             // 
@@ -311,7 +311,7 @@ namespace Policlinica_Proiect
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.admin);
+            this.Controls.Add(this.main);
             this.Controls.Add(this.panel1);
             this.Name = "Form2";
             this.Text = "Sanavita";
@@ -320,8 +320,8 @@ namespace Policlinica_Proiect
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.admin.ResumeLayout(false);
-            this.admin.PerformLayout();
+            this.main.ResumeLayout(false);
+            this.main.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -345,7 +345,7 @@ namespace Policlinica_Proiect
         private Button buttonMeniu;
         private Button button2;
         private Panel panel6;
-        private Panel admin;
+        private Panel main;
         private Label label3;
     }
 }
