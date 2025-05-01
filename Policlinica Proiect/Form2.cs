@@ -20,15 +20,15 @@ namespace Policlinica_Proiect
         DatabaseConnection dbConnection = new DatabaseConnection();
 
         private MySqlConnection connection;
+        
 
         public Form2(string perspectiva)
         {
             InitializeComponent();
             this.perspectiva = perspectiva;
-            panel4.Visible = false;
             this.label1.Text = perspectiva;
-            // inițializez conexiunea și o stochez în câmpul de clasă
-            connection = dbConnection.GetConnection();
+            
+            meniu.Visible = false;
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -57,7 +57,7 @@ namespace Policlinica_Proiect
         {
             
             main.Controls.Clear(); 
-            panel4.Visible = false; // ascunde panelul 4
+            meniu.Visible = false; 
             UserControlPersonalcs pv = new UserControlPersonalcs();
             pv.Dock = DockStyle.Fill;
             main.Controls.Add(pv);
@@ -65,7 +65,11 @@ namespace Policlinica_Proiect
 
         private void buttonPacienti_Click(object sender, EventArgs e)
         {
-            
+            main.Controls.Clear();
+            meniu.Visible = false; // ascunde panelul 4
+            UserControlPacienti pv = new UserControlPacienti();
+            pv.Dock = DockStyle.Fill;
+            main.Controls.Add(pv);
         }
 
         private void buttonProgram_Click(object sender, EventArgs e)
@@ -73,20 +77,13 @@ namespace Policlinica_Proiect
             
         }
 
+
         private void buttonMeniu_Click(object sender, EventArgs e)
         {
-           if(panel4.Visible == false)
-            {
-                panel4.Visible = true; // arată panelul 4
-            }
-            else
-            {
-                panel4.Visible = false; // ascunde panelul 4
-            }
+            meniu.Visible = !meniu.Visible; // comutare vizibilitate
+            meniu.BringToFront();           // adu panelul în față
         }
 
-        
-
-        
+       
     }
 }

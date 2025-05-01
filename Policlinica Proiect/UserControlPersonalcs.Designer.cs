@@ -89,6 +89,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -615,6 +616,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Info;
+            this.panel3.Controls.Add(this.button8);
             this.panel3.Controls.Add(this.checkBoxDataAngjD);
             this.panel3.Controls.Add(this.checkBoxSalariuD);
             this.panel3.Controls.Add(this.checkBoxPrenumeD);
@@ -760,9 +762,9 @@
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.Location = new System.Drawing.Point(36, 340);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(167, 58);
+            this.button6.Size = new System.Drawing.Size(313, 58);
             this.button6.TabIndex = 15;
-            this.button6.Text = "Ordonare";
+            this.button6.Text = "Ordonare Crescatoare";
             this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -788,6 +790,23 @@
             this.label21.Size = new System.Drawing.Size(174, 42);
             this.label21.TabIndex = 17;
             this.label21.Text = "Personal";
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.LightBlue;
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.Color.DarkBlue;
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.Location = new System.Drawing.Point(365, 340);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(411, 58);
+            this.button8.TabIndex = 26;
+            this.button8.Text = "Ordonare Descrescatoare";
+            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // UserControlPersonalcs
             // 
@@ -880,5 +899,6 @@
         private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button button8;
     }
 }

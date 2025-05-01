@@ -70,7 +70,7 @@ namespace Policlinica_Proiect
         }
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            helper.CautaPersonal(textBoxSearch.Text.Trim(), dataGridView1, connection);
+            helper.CautaDupaNumePrenume(textBoxSearch.Text, "Personal", dataGridView1, connection);
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -162,7 +162,7 @@ namespace Policlinica_Proiect
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            helper.StergeRandSelectat(dataGridView1, "Personal", "IDPersonal", connection);
+            helper.StergeRandCuDetectareAutomata("Personal", "IdPersonal", dataGridView1, connection);
             helper.AfiseazaTabela("Personal", dataGridView1, connection);
         }
         private void button5_Click(object sender, EventArgs e)
@@ -332,6 +332,11 @@ namespace Policlinica_Proiect
 
             helper.SorteazaDate("Personal", criterii, connection, dataGridView1);
 
+          
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
             var criteriiDesc = new Dictionary<CheckBox, string>
     {
         { checkBoxNumeD, "Nume" },

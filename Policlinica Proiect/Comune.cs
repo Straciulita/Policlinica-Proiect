@@ -29,11 +29,11 @@ namespace Policlinica_Proiect
                 MessageBox.Show("Eroare la interogare: " + ex.Message);
             }
         }
-        public void CautaPersonal(string cautare, DataGridView dgv, MySqlConnection conn)
+        public void CautaDupaNumePrenume(string cautare, string numeTabela, DataGridView dgv, MySqlConnection conn)
         {
             try
             {
-                string query = "SELECT * FROM Personal WHERE Nume LIKE @cautare OR Prenume LIKE @cautare";
+                string query = $"SELECT * FROM {numeTabela} WHERE Nume LIKE @cautare OR Prenume LIKE @cautare";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@cautare", "%" + cautare + "%");
@@ -54,6 +54,7 @@ namespace Policlinica_Proiect
                 MessageBox.Show("Eroare la căutare: " + ex.Message);
             }
         }
+
         public void AfiseazaDetaliiRandSelectat(DataGridView dgv, Label lbl)
         {
             if (dgv.SelectedRows.Count > 0)
@@ -71,54 +72,89 @@ namespace Policlinica_Proiect
                 lbl.Text = detalii.ToString();
             }
         }
-        public void StergeRandSelectat(DataGridView dgv, string numeTabela, string numeColoanaID, MySqlConnection conn, Action refreshTabel = null)
+        public void StergeRandCuDetectareAutomata(string numeTabelaPrincipala,string coloanaId,DataGridView dgv,MySqlConnection conn)
         {
-            if (dgv.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Selectează un rând mai întâi.");
-                return;
-            }
-
-            // Preia rândul selectat
-            DataGridViewRow rand = dgv.SelectedRows[0];
-            object idValoare = rand.Cells[numeColoanaID]?.Value;
-
-            if (idValoare == null || idValoare == DBNull.Value)
-            {
-                MessageBox.Show("Nu s-a putut identifica ID-ul rândului.");
-                return;
-            }
-
-            // Confirmare ștergere
-            DialogResult confirmare = MessageBox.Show("Ești sigur că vrei să ștergi acest rând?", "Confirmare ștergere", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (confirmare != DialogResult.Yes)
-                return;
-
-            // Ștergere din baza de date
-            string query = $"DELETE FROM `{numeTabela}` WHERE `{numeColoanaID}` = @id";
-
             try
             {
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@id", idValoare);
-                int randuriSterse = cmd.ExecuteNonQuery();
+                if (dgv.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Selectează un rând pentru a fi șters.", "Atenție", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-                if (randuriSterse > 0)
+                object valoareId = dgv.SelectedRows[0].Cells[coloanaId].Value;
+                if (valoareId == null || valoareId == DBNull.Value)
                 {
-                    MessageBox.Show("Rândul a fost șters cu succes.");
-                    refreshTabel?.Invoke(); // Reîncarcă datele dacă ai pasat o metodă
+                    MessageBox.Show("Nu s-a putut determina ID-ul rândului selectat.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-                else
+
+                // Obține tabelele care au FK către tabela principală
+                string depQuery = @"
+            SELECT TABLE_NAME, COLUMN_NAME 
+            FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE 
+            WHERE REFERENCED_TABLE_NAME = @tabela 
+              AND REFERENCED_COLUMN_NAME = @coloana 
+              AND CONSTRAINT_SCHEMA = DATABASE()";
+
+                MySqlCommand cmdDep = new MySqlCommand(depQuery, conn);
+                cmdDep.Parameters.AddWithValue("@tabela", numeTabelaPrincipala);
+                cmdDep.Parameters.AddWithValue("@coloana", coloanaId);
+
+                var dependente = new List<(string tabela, string coloana)>();
+                using (MySqlDataReader reader = cmdDep.ExecuteReader())
                 {
-                    MessageBox.Show("Nu s-a șters niciun rând.");
+                    while (reader.Read())
+                    {
+                        dependente.Add((reader.GetString("TABLE_NAME"), reader.GetString("COLUMN_NAME")));
+                    }
                 }
+
+                // Verifică existența datelor în tabelele dependente
+                List<string> tabeleGasite = new List<string>();
+                foreach (var (tabela, coloana) in dependente)
+                {
+                    string countQuery = $"SELECT COUNT(*) FROM {tabela} WHERE {coloana} = @id";
+                    MySqlCommand countCmd = new MySqlCommand(countQuery, conn);
+                    countCmd.Parameters.AddWithValue("@id", valoareId);
+                    int count = Convert.ToInt32(countCmd.ExecuteScalar());
+
+                    if (count > 0)
+                        tabeleGasite.Add(tabela);
+                }
+
+                // Confirmare dacă sunt înregistrări dependente
+                if (tabeleGasite.Count > 0)
+                {
+                    string msg = $"ID-ul există în: {string.Join(", ", tabeleGasite)}.\nDoriți ștergerea acestor înregistrări și a celui principal?";
+                    DialogResult confirm = MessageBox.Show(msg, "Ștergere în cascadă?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (confirm != DialogResult.Yes)
+                        return;
+
+                    // Șterge întâi din tabelele dependente
+                    foreach (var (tabela, coloana) in dependente)
+                    {
+                        string delDep = $"DELETE FROM {tabela} WHERE {coloana} = @id";
+                        MySqlCommand delDepCmd = new MySqlCommand(delDep, conn);
+                        delDepCmd.Parameters.AddWithValue("@id", valoareId);
+                        delDepCmd.ExecuteNonQuery();
+                    }
+                }
+
+                // Șterge rândul principal
+                string deleteMain = $"DELETE FROM {numeTabelaPrincipala} WHERE {coloanaId} = @id";
+                MySqlCommand deleteCmd = new MySqlCommand(deleteMain, conn);
+                deleteCmd.Parameters.AddWithValue("@id", valoareId);
+                deleteCmd.ExecuteNonQuery();
+
+                MessageBox.Show("Ștergere realizată cu succes.", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Eroare la ștergere: " + ex.Message);
+                MessageBox.Show("Eroare la ștergere: " + ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         public void AdaugaRand(string numeTabela, Dictionary<string, object> coloaneSiValori, MySqlConnection conn)
         {
             try
@@ -145,7 +181,7 @@ namespace Policlinica_Proiect
             }
         }
 
-        public void IncarcaDateInControale(DataGridView dgv,Dictionary<string, Control> mapareColoaneControale)
+        public void IncarcaDateInControale(DataGridView dgv, Dictionary<string, Control> mapareColoaneControale)
         {
             if (dgv.SelectedRows.Count == 0)
             {
@@ -167,6 +203,7 @@ namespace Policlinica_Proiect
                     if (control is TextBox) ((TextBox)control).Text = "";
                     else if (control is ComboBox) ((ComboBox)control).SelectedIndex = -1;
                     else if (control is DateTimePicker) ((DateTimePicker)control).Value = DateTime.Today;
+                    else if (control is CheckBox) ((CheckBox)control).Checked = false;
                 }
                 else
                 {
@@ -174,9 +211,24 @@ namespace Policlinica_Proiect
                     else if (control is ComboBox) ((ComboBox)control).SelectedValue = valoare;
                     else if (control is DateTimePicker && DateTime.TryParse(valoare.ToString(), out DateTime dt))
                         ((DateTimePicker)control).Value = dt;
+                    else if (control is CheckBox)
+                    {
+                        bool rezultat = false;
+
+                        // Interpretare flexibilă a valorii pentru CheckBox
+                        if (valoare is bool b)
+                            rezultat = b;
+                        else if (valoare is int i)
+                            rezultat = i != 0;
+                        else if (valoare is string s)
+                            rezultat = s.ToLower() == "true" || s == "1";
+
+                        ((CheckBox)control).Checked = rezultat;
+                    }
                 }
             }
         }
+
         public void UpdateRand(string tabela,string coloanaCheie,Control controlCheie,Dictionary<string, Control> campuri,MySqlConnection conn)
         {
             try
@@ -228,36 +280,44 @@ namespace Policlinica_Proiect
                 MessageBox.Show("Eroare la actualizare: " + ex.Message);
             }
         }
-        public void SorteazaDate(string tabela,Dictionary<CheckBox, string> criteriiSortare,MySqlConnection conn,DataGridView grid)
+        public void SorteazaDate(string tabela, Dictionary<CheckBox, string> criteriiSortare, MySqlConnection conn, DataGridView grid)
         {
             try
             {
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+
                 List<string> coloaneSortare = new List<string>();
 
                 foreach (var pair in criteriiSortare)
                 {
-                    if (pair.Key.Checked)
-                        coloaneSortare.Add(pair.Value);
+                    if (pair.Key != null && pair.Key.Checked && !string.IsNullOrWhiteSpace(pair.Value))
+                    {
+                        coloaneSortare.Add($"`{pair.Value}`"); // protejează numele coloanei
+                    }
                 }
 
                 string query = $"SELECT * FROM `{tabela}`";
 
                 if (coloaneSortare.Count > 0)
                 {
-                    query += " ORDER BY " + string.Join(", ", coloaneSortare) + " ASC";
+                    query += " ORDER BY " + string.Join(", ", coloaneSortare);
                 }
 
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-                grid.DataSource = table;
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                {
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    grid.DataSource = table;
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Eroare la sortare: " + ex.Message);
             }
         }
+
         public void SorteazaDescrescator(string tabela,Dictionary<CheckBox, string> criteriiSortare,MySqlConnection conn,DataGridView grid)
         {
             try
