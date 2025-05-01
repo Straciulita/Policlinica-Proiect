@@ -55,9 +55,9 @@ namespace Policlinica_Proiect
 
         private void buttonPersonal_Click(object sender, EventArgs e)
         {
-            
-            main.Controls.Clear(); 
-            meniu.Visible = false; 
+            foreach (Control c in main.Controls)
+                c.Visible = false;
+
             UserControlPersonalcs pv = new UserControlPersonalcs();
             pv.Dock = DockStyle.Fill;
             main.Controls.Add(pv);
@@ -65,11 +65,14 @@ namespace Policlinica_Proiect
 
         private void buttonPacienti_Click(object sender, EventArgs e)
         {
-            main.Controls.Clear();
-            meniu.Visible = false; // ascunde panelul 4
+            foreach (Control c in main.Controls)
+                c.Visible = false;
+
             UserControlPacienti pv = new UserControlPacienti();
             pv.Dock = DockStyle.Fill;
             main.Controls.Add(pv);
+
+
         }
 
         private void buttonProgram_Click(object sender, EventArgs e)
@@ -81,7 +84,7 @@ namespace Policlinica_Proiect
         private void buttonMeniu_Click(object sender, EventArgs e)
         {
             meniu.Visible = !meniu.Visible; // comutare vizibilitate
-            meniu.BringToFront();           // adu panelul în față
+           
         }
 
        

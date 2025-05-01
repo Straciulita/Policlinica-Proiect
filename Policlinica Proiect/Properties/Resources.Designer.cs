@@ -93,6 +93,16 @@ namespace Policlinica_Proiect.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap doctor1jpg {
+            get {
+                object obj = ResourceManager.GetObject("doctor1jpg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ekg {
             get {
                 object obj = ResourceManager.GetObject("ekg", resourceCulture);
