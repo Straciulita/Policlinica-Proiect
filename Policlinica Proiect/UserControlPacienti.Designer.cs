@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlPacienti));
             this.label21 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.buttonSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -75,6 +74,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.buttonSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -110,18 +110,6 @@
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.BackColor = System.Drawing.Color.White;
-            this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSearch.Image = ((System.Drawing.Image)(resources.GetObject("buttonSearch.Image")));
-            this.buttonSearch.Location = new System.Drawing.Point(776, 13);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(71, 58);
-            this.buttonSearch.TabIndex = 20;
-            this.buttonSearch.UseVisualStyleBackColor = false;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // textBoxSearch
             // 
@@ -160,6 +148,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(842, 386);
             this.panel7.TabIndex = 23;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // button4
             // 
@@ -205,6 +194,7 @@
             this.labelDetalii.Size = new System.Drawing.Size(198, 32);
             this.labelDetalii.TabIndex = 0;
             this.labelDetalii.Text = "detalii pacienti";
+            this.labelDetalii.Click += new System.EventHandler(this.labelDetalii_Click);
             // 
             // panel1
             // 
@@ -219,6 +209,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(516, 421);
             this.panel1.TabIndex = 24;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button2
             // 
@@ -243,6 +234,7 @@
             this.textBoxVarstaMax.Name = "textBoxVarstaMax";
             this.textBoxVarstaMax.Size = new System.Drawing.Size(280, 22);
             this.textBoxVarstaMax.TabIndex = 8;
+            this.textBoxVarstaMax.TextChanged += new System.EventHandler(this.textBoxVarstaMax_TextChanged);
             // 
             // textBoxVarstaMin
             // 
@@ -250,6 +242,7 @@
             this.textBoxVarstaMin.Name = "textBoxVarstaMin";
             this.textBoxVarstaMin.Size = new System.Drawing.Size(280, 22);
             this.textBoxVarstaMin.TabIndex = 7;
+            this.textBoxVarstaMin.TextChanged += new System.EventHandler(this.textBoxVarstaMin_TextChanged);
             // 
             // label3
             // 
@@ -261,6 +254,7 @@
             this.label3.Size = new System.Drawing.Size(169, 29);
             this.label3.TabIndex = 2;
             this.label3.Text = "Varsta maxima";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -272,6 +266,7 @@
             this.label2.Size = new System.Drawing.Size(164, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "Varsta minima";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -283,6 +278,7 @@
             this.label1.Size = new System.Drawing.Size(107, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Filtrare";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label8
             // 
@@ -294,6 +290,7 @@
             this.label8.Size = new System.Drawing.Size(78, 29);
             this.label8.TabIndex = 6;
             this.label8.Text = "Nume";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -305,6 +302,7 @@
             this.label9.Size = new System.Drawing.Size(111, 29);
             this.label9.TabIndex = 7;
             this.label9.Text = "Prenume";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
@@ -316,6 +314,7 @@
             this.label10.Size = new System.Drawing.Size(64, 29);
             this.label10.TabIndex = 8;
             this.label10.Text = "CNP";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label12
             // 
@@ -327,6 +326,7 @@
             this.label12.Size = new System.Drawing.Size(89, 29);
             this.label12.TabIndex = 10;
             this.label12.Text = "Adresa";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // button5
             // 
@@ -351,6 +351,7 @@
             this.textBoxNume.Name = "textBoxNume";
             this.textBoxNume.Size = new System.Drawing.Size(349, 22);
             this.textBoxNume.TabIndex = 14;
+            this.textBoxNume.TextChanged += new System.EventHandler(this.textBoxNume_TextChanged);
             // 
             // textBoxPrenume
             // 
@@ -358,6 +359,7 @@
             this.textBoxPrenume.Name = "textBoxPrenume";
             this.textBoxPrenume.Size = new System.Drawing.Size(349, 22);
             this.textBoxPrenume.TabIndex = 15;
+            this.textBoxPrenume.TextChanged += new System.EventHandler(this.textBoxPrenume_TextChanged);
             // 
             // textBoxCNP
             // 
@@ -365,6 +367,7 @@
             this.textBoxCNP.Name = "textBoxCNP";
             this.textBoxCNP.Size = new System.Drawing.Size(349, 22);
             this.textBoxCNP.TabIndex = 16;
+            this.textBoxCNP.TextChanged += new System.EventHandler(this.textBoxCNP_TextChanged);
             // 
             // textBoxAdresa
             // 
@@ -372,6 +375,7 @@
             this.textBoxAdresa.Name = "textBoxAdresa";
             this.textBoxAdresa.Size = new System.Drawing.Size(349, 22);
             this.textBoxAdresa.TabIndex = 17;
+            this.textBoxAdresa.TextChanged += new System.EventHandler(this.textBoxAdresa_TextChanged);
             // 
             // label16
             // 
@@ -383,6 +387,7 @@
             this.label16.Size = new System.Drawing.Size(96, 29);
             this.label16.TabIndex = 18;
             this.label16.Text = "Telefon";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label17
             // 
@@ -394,6 +399,7 @@
             this.label17.Size = new System.Drawing.Size(80, 29);
             this.label17.TabIndex = 19;
             this.label17.Text = "Varsta";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // textBoxTel
             // 
@@ -401,6 +407,7 @@
             this.textBoxTel.Name = "textBoxTel";
             this.textBoxTel.Size = new System.Drawing.Size(349, 22);
             this.textBoxTel.TabIndex = 20;
+            this.textBoxTel.TextChanged += new System.EventHandler(this.textBoxTel_TextChanged);
             // 
             // textBoxVarsta
             // 
@@ -408,6 +415,7 @@
             this.textBoxVarsta.Name = "textBoxVarsta";
             this.textBoxVarsta.Size = new System.Drawing.Size(349, 22);
             this.textBoxVarsta.TabIndex = 21;
+            this.textBoxVarsta.TextChanged += new System.EventHandler(this.textBoxVarsta_TextChanged);
             // 
             // button7
             // 
@@ -450,6 +458,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(530, 421);
             this.panel2.TabIndex = 25;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // textBoxId
             // 
@@ -458,6 +467,7 @@
             this.textBoxId.Name = "textBoxId";
             this.textBoxId.Size = new System.Drawing.Size(349, 22);
             this.textBoxId.TabIndex = 27;
+            this.textBoxId.TextChanged += new System.EventHandler(this.textBoxId_TextChanged);
             // 
             // label20
             // 
@@ -470,6 +480,7 @@
             this.label20.Size = new System.Drawing.Size(33, 29);
             this.label20.TabIndex = 26;
             this.label20.Text = "Id";
+            this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
             // checkBoxAsigurat
             // 
@@ -502,6 +513,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(841, 421);
             this.panel3.TabIndex = 26;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // button8
             // 
@@ -548,6 +560,7 @@
             this.checkBoxVarstaD.TabIndex = 24;
             this.checkBoxVarstaD.Text = "Varsta";
             this.checkBoxVarstaD.UseVisualStyleBackColor = true;
+            this.checkBoxVarstaD.CheckedChanged += new System.EventHandler(this.checkBoxVarstaD_CheckedChanged);
             // 
             // checkBoxPrenumeD
             // 
@@ -560,6 +573,7 @@
             this.checkBoxPrenumeD.TabIndex = 23;
             this.checkBoxPrenumeD.Text = "Prenume";
             this.checkBoxPrenumeD.UseVisualStyleBackColor = true;
+            this.checkBoxPrenumeD.CheckedChanged += new System.EventHandler(this.checkBoxPrenumeD_CheckedChanged);
             // 
             // checkBoxNumeD
             // 
@@ -572,6 +586,7 @@
             this.checkBoxNumeD.TabIndex = 22;
             this.checkBoxNumeD.Text = "Nume";
             this.checkBoxNumeD.UseVisualStyleBackColor = true;
+            this.checkBoxNumeD.CheckedChanged += new System.EventHandler(this.checkBoxNumeD_CheckedChanged);
             // 
             // checkBoxVarstaC
             // 
@@ -584,6 +599,7 @@
             this.checkBoxVarstaC.TabIndex = 20;
             this.checkBoxVarstaC.Text = "Varsta";
             this.checkBoxVarstaC.UseVisualStyleBackColor = true;
+            this.checkBoxVarstaC.CheckedChanged += new System.EventHandler(this.checkBoxVarstaC_CheckedChanged);
             // 
             // checkBoxPrenumeC
             // 
@@ -596,6 +612,7 @@
             this.checkBoxPrenumeC.TabIndex = 19;
             this.checkBoxPrenumeC.Text = "Prenume";
             this.checkBoxPrenumeC.UseVisualStyleBackColor = true;
+            this.checkBoxPrenumeC.CheckedChanged += new System.EventHandler(this.checkBoxPrenumeC_CheckedChanged);
             // 
             // checkBoxNumeC
             // 
@@ -608,6 +625,7 @@
             this.checkBoxNumeC.TabIndex = 18;
             this.checkBoxNumeC.Text = "Nume";
             this.checkBoxNumeC.UseVisualStyleBackColor = true;
+            this.checkBoxNumeC.CheckedChanged += new System.EventHandler(this.checkBoxNumeC_CheckedChanged);
             // 
             // label19
             // 
@@ -619,6 +637,7 @@
             this.label19.Size = new System.Drawing.Size(155, 29);
             this.label19.TabIndex = 17;
             this.label19.Text = "Descrescator";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // label18
             // 
@@ -630,6 +649,7 @@
             this.label18.Size = new System.Drawing.Size(117, 29);
             this.label18.TabIndex = 16;
             this.label18.Text = "Crescator";
+            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // label15
             // 
@@ -641,6 +661,19 @@
             this.label15.Size = new System.Drawing.Size(140, 36);
             this.label15.TabIndex = 1;
             this.label15.Text = "Ordonare";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.BackColor = System.Drawing.Color.White;
+            this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSearch.Image = ((System.Drawing.Image)(resources.GetObject("buttonSearch.Image")));
+            this.buttonSearch.Location = new System.Drawing.Point(776, 13);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(71, 58);
+            this.buttonSearch.TabIndex = 20;
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // UserControlPacienti
             // 

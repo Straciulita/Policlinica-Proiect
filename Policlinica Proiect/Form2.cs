@@ -77,7 +77,12 @@ namespace Policlinica_Proiect
 
         private void buttonProgram_Click(object sender, EventArgs e)
         {
-            
+            foreach (Control c in main.Controls)
+                c.Visible = false;
+
+            UserControlProgramcs pv = new UserControlProgramcs();
+            pv.Dock = DockStyle.Fill;
+            main.Controls.Add(pv);
         }
 
 
@@ -87,6 +92,14 @@ namespace Policlinica_Proiect
            
         }
 
-       
+        private void buttonServicii_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in main.Controls)
+                c.Visible = false;
+
+            UserControlServicii pv = new UserControlServicii();
+            pv.Dock = DockStyle.Fill;
+            main.Controls.Add(pv);
+        }
     }
 }

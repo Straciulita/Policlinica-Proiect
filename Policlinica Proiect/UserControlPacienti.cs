@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -134,22 +135,63 @@ namespace Policlinica_Proiect
 
         private void button5_Click(object sender, EventArgs e)
         {
+            // Verificare câmpuri goale
+            if (string.IsNullOrWhiteSpace(textBoxNume.Text) ||
+                string.IsNullOrWhiteSpace(textBoxPrenume.Text) ||
+                string.IsNullOrWhiteSpace(textBoxCNP.Text) ||
+                string.IsNullOrWhiteSpace(textBoxTel.Text) ||
+                string.IsNullOrWhiteSpace(textBoxAdresa.Text) ||
+                string.IsNullOrWhiteSpace(textBoxVarsta.Text))
+            {
+                MessageBox.Show("Te rugăm să completezi toate câmpurile!", "Câmpuri incomplete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validare CNP
+            if (!Regex.IsMatch(textBoxCNP.Text, @"^\d{13}$"))
+            {
+                MessageBox.Show("CNP-ul trebuie să conțină exact 13 cifre!", "CNP invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validare telefon
+            if (!Regex.IsMatch(textBoxTel.Text, @"^\d{10}$"))
+            {
+                MessageBox.Show("Numărul de telefon trebuie să conțină exact 10 cifre!", "Telefon invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validare vârstă numerică
+            if (!int.TryParse(textBoxVarsta.Text, out int v))
+            {
+                MessageBox.Show("Vârsta trebuie să fie un număr valid!", "Vârstă invalidă", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             // Dacă toate validările sunt trecute, se adaugă rândul
             Dictionary<string, object> date = new Dictionary<string, object>
     {
-
         { "Nume", textBoxNume.Text },
         { "Prenume", textBoxPrenume.Text },
         { "CNP", textBoxCNP.Text },
         { "telefon", textBoxTel.Text },
         { "adresa", textBoxAdresa.Text },
-        { "varsta", int.TryParse(textBoxVarsta.Text, out int v) ? v : (object)DBNull.Value },
+        { "varsta", v },
         { "asigurat", checkBoxAsigurat.Checked }
     };
 
-            helper.AdaugaRand("Pacient", date, connection);
-            helper.AfiseazaTabela("Pacient", dataGridView1, connection);
+            try
+            {
+                helper.AdaugaRand("Pacient", date, connection);
+                helper.AfiseazaTabela("Pacient", dataGridView1, connection);
+                MessageBox.Show("Pacientul a fost adăugat cu succes!", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Eroare la adăugare: " + ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void button7_Click(object sender, EventArgs e)
         {
@@ -195,6 +237,171 @@ namespace Policlinica_Proiect
     };
 
             helper.SorteazaDescrescator("Pacient", criteriiDesc, connection, dataGridView1);
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void labelDetalii_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBoxVarstaMax_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxVarstaMin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNume_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxPrenume_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxCNP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxAdresa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxTel_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxVarsta_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBoxId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void checkBoxVarstaD_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxPrenumeD_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxNumeD_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxVarstaC_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxPrenumeC_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxNumeC_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

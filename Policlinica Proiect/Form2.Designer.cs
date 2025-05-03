@@ -34,16 +34,17 @@ namespace Policlinica_Proiect
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.labelOraData = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonMeniu = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.main = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.meniu = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.meniu = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonRapoarte = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -54,10 +55,9 @@ namespace Policlinica_Proiect
             this.panel5 = new System.Windows.Forms.Panel();
             this.buttonPacienti = new System.Windows.Forms.Button();
             this.buttonPersonal = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.buttonMeniu = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.main.SuspendLayout();
             this.meniu.SuspendLayout();
@@ -77,6 +77,15 @@ namespace Policlinica_Proiect
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2076, 86);
             this.panel1.TabIndex = 0;
+            // 
+            // panel6
+            // 
+            this.panel6.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.ceas;
+            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel6.Location = new System.Drawing.Point(1483, 15);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(62, 57);
+            this.panel6.TabIndex = 6;
             // 
             // labelOraData
             // 
@@ -100,6 +109,27 @@ namespace Policlinica_Proiect
             this.label2.TabIndex = 3;
             this.label2.Text = "Policlinica Sanavita";
             // 
+            // buttonMeniu
+            // 
+            this.buttonMeniu.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.buttonMeniu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonMeniu.Image = ((System.Drawing.Image)(resources.GetObject("buttonMeniu.Image")));
+            this.buttonMeniu.Location = new System.Drawing.Point(24, 10);
+            this.buttonMeniu.Name = "buttonMeniu";
+            this.buttonMeniu.Size = new System.Drawing.Size(100, 68);
+            this.buttonMeniu.TabIndex = 5;
+            this.buttonMeniu.UseVisualStyleBackColor = false;
+            this.buttonMeniu.Click += new System.EventHandler(this.buttonMeniu_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.inima;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Location = new System.Drawing.Point(731, 10);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(76, 62);
+            this.panel3.TabIndex = 2;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -109,6 +139,16 @@ namespace Policlinica_Proiect
             this.label1.Size = new System.Drawing.Size(64, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.poza_300x300;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(173, 15);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(57, 54);
+            this.panel2.TabIndex = 0;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // timer1
             // 
@@ -127,16 +167,14 @@ namespace Policlinica_Proiect
             this.main.Size = new System.Drawing.Size(2363, 1047);
             this.main.TabIndex = 3;
             // 
-            // label3
+            // panel4
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label3.Location = new System.Drawing.Point(828, 5);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(489, 91);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Bine ai venit!";
+            this.panel4.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.doctor1jpg;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel4.Location = new System.Drawing.Point(1402, 27);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(462, 252);
+            this.panel4.TabIndex = 3;
             // 
             // meniu
             // 
@@ -155,37 +193,6 @@ namespace Policlinica_Proiect
             this.meniu.Name = "meniu";
             this.meniu.Size = new System.Drawing.Size(211, 754);
             this.meniu.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Navy;
-            this.label4.Location = new System.Drawing.Point(55, 105);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1270, 174);
-            this.label4.TabIndex = 1;
-            this.label4.Text = resources.GetString("label4.Text");
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Navy;
-            this.label5.Location = new System.Drawing.Point(55, 306);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(1847, 551);
-            this.label5.TabIndex = 2;
-            this.label5.Text = resources.GetString("label5.Text");
-            // 
-            // panel4
-            // 
-            this.panel4.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.doctor1jpg;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel4.Location = new System.Drawing.Point(1402, 27);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(462, 252);
-            this.panel4.TabIndex = 3;
             // 
             // button1
             // 
@@ -258,6 +265,7 @@ namespace Policlinica_Proiect
             this.buttonServicii.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonServicii.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonServicii.UseVisualStyleBackColor = false;
+            this.buttonServicii.Click += new System.EventHandler(this.buttonServicii_Click);
             // 
             // button4
             // 
@@ -363,45 +371,38 @@ namespace Policlinica_Proiect
             this.buttonPersonal.UseVisualStyleBackColor = false;
             this.buttonPersonal.Click += new System.EventHandler(this.buttonPersonal_Click);
             // 
-            // panel6
+            // label5
             // 
-            this.panel6.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.ceas;
-            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel6.Location = new System.Drawing.Point(1483, 15);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(62, 57);
-            this.panel6.TabIndex = 6;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Navy;
+            this.label5.Location = new System.Drawing.Point(55, 306);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(1847, 551);
+            this.label5.TabIndex = 2;
+            this.label5.Text = resources.GetString("label5.Text");
             // 
-            // buttonMeniu
+            // label4
             // 
-            this.buttonMeniu.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.buttonMeniu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonMeniu.Image = ((System.Drawing.Image)(resources.GetObject("buttonMeniu.Image")));
-            this.buttonMeniu.Location = new System.Drawing.Point(24, 10);
-            this.buttonMeniu.Name = "buttonMeniu";
-            this.buttonMeniu.Size = new System.Drawing.Size(100, 68);
-            this.buttonMeniu.TabIndex = 5;
-            this.buttonMeniu.UseVisualStyleBackColor = false;
-            this.buttonMeniu.Click += new System.EventHandler(this.buttonMeniu_Click);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Navy;
+            this.label4.Location = new System.Drawing.Point(55, 105);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(1270, 174);
+            this.label4.TabIndex = 1;
+            this.label4.Text = resources.GetString("label4.Text");
             // 
-            // panel3
+            // label3
             // 
-            this.panel3.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.inima;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(731, 10);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(76, 62);
-            this.panel3.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.poza_300x300;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(173, 15);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(57, 54);
-            this.panel2.TabIndex = 0;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label3.Location = new System.Drawing.Point(798, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(489, 91);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Bine ai venit!";
             // 
             // Form2
             // 

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,6 +55,28 @@ namespace Policlinica_Proiect
                 MessageBox.Show("Eroare la căutare: " + ex.Message);
             }
         }
+        public void CautaInTabela(string numeTabela, string coloanaCautata, string termenCautare, MySqlConnection conn, DataGridView grid)
+        {
+            try
+            {
+                string query = $"SELECT * FROM `{numeTabela}` WHERE `{coloanaCautata}` LIKE @termen";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@termen", "%" + termenCautare + "%");
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    grid.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Eroare la căutare: " + ex.Message);
+            }
+        }
 
         public void AfiseazaDetaliiRandSelectat(DataGridView dgv, Label lbl)
         {
@@ -68,7 +91,12 @@ namespace Policlinica_Proiect
                     string valoare = cell.Value?.ToString() ?? "null";
                     detalii.AppendLine($"{numeColoana}: {valoare}");
                 }
-
+                // Configurare robustă
+                lbl.Visible = true;
+                //lbl.BringToFront();
+                lbl.AutoSize = false;
+                lbl.Size = new Size(450, 300); // sau cât vrei tu
+                lbl.TextAlign = ContentAlignment.TopLeft;
                 lbl.Text = detalii.ToString();
             }
         }
@@ -317,7 +345,7 @@ namespace Policlinica_Proiect
                 MessageBox.Show("Eroare la sortare: " + ex.Message);
             }
         }
-
+       
         public void SorteazaDescrescator(string tabela,Dictionary<CheckBox, string> criteriiSortare,MySqlConnection conn,DataGridView grid)
         {
             try
