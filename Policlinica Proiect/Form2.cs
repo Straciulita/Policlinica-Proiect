@@ -101,5 +101,15 @@ namespace Policlinica_Proiect
             pv.Dock = DockStyle.Fill;
             main.Controls.Add(pv);
         }
+
+        private void buttonProgramari_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in main.Controls)
+                c.Visible = false;
+
+            UserControlProgramari pv = new UserControlProgramari();
+            pv.Dock = DockStyle.Fill;
+            main.Controls.Add(pv);
+        }
     }
 }

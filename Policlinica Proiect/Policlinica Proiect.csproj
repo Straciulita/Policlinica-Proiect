@@ -129,6 +129,12 @@
     <Compile Include="UserControlPersonalcs.Designer.cs">
       <DependentUpon>UserControlPersonalcs.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlProgramari.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlProgramari.Designer.cs">
+      <DependentUpon>UserControlProgramari.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlProgramcs.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlPersonalcs.resx">
       <DependentUpon>UserControlPersonalcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlProgramari.resx">
+      <DependentUpon>UserControlProgramari.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlProgramcs.resx">
       <DependentUpon>UserControlProgramcs.cs</DependentUpon>
