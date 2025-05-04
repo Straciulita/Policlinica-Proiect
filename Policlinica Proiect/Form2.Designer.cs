@@ -223,6 +223,7 @@ namespace Policlinica_Proiect
             this.buttonRapoarte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonRapoarte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonRapoarte.UseVisualStyleBackColor = false;
+            this.buttonRapoarte.Click += new System.EventHandler(this.buttonRapoarte_Click);
             // 
             // button2
             // 

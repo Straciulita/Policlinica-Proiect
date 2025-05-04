@@ -121,5 +121,15 @@ namespace Policlinica_Proiect
             pv.Dock = DockStyle.Fill;
             main.Controls.Add(pv);
         }
+
+        private void buttonRapoarte_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in main.Controls)
+                c.Visible = false;
+
+            UserControlRapoarte pv = new UserControlRapoarte();
+            pv.Dock = DockStyle.Fill;
+            main.Controls.Add(pv);
+        }
     }
 }
