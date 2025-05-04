@@ -40,21 +40,25 @@ namespace Policlinica_Proiect
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count > 0)
+        {   if(dataGridView1.SelectedRows.Count > 0 || dataGridView2.SelectedRows.Count > 0)
             {
-                helper.StergeRandCuDetectareAutomata("Programari", "IdProgramare", dataGridView1, connection);
-                helper.AfiseazaTabela("Programari", dataGridView1, connection);
-            }
-            else if (dataGridView2.SelectedRows.Count > 0)
-            {
-                helper.StergeRandCuDetectareAutomata("Consultatie", "IdConsultatie", dataGridView2, connection);
-                helper.AfiseazaTabela("Consultatie", dataGridView2, connection);
+                // Verificăm dacă există rânduri selectate în oricare dintre cele două DataGridView-uri
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    helper.StergeRandCuDetectareAutomata("Programari", "IdProgramare", dataGridView1, connection);
+                    helper.AfiseazaTabela("Programari", dataGridView1, connection);
+                }
+                if (dataGridView2.SelectedRows.Count > 0)
+                {
+                    helper.StergeRandCuDetectareAutomata("Consultatie", "IdConsultatie", dataGridView2, connection);
+                    helper.AfiseazaTabela("Consultatie", dataGridView2, connection);
+                }
             }
             else
             {
                 MessageBox.Show("Selectează un rând dintr-unul dintre tabele pentru a-l șterge!", "Nicio selecție", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+           
         }
 
         private void button4_Click(object sender, EventArgs e)
