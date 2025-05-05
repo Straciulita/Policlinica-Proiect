@@ -28,7 +28,8 @@ namespace Policlinica_Proiect
             this.perspectiva = perspectiva;
             this.label1.Text = perspectiva;
             
-            meniu.Visible = false;
+            meniuAdmin.Visible = false;
+            meniuDoctor.Visible = false;
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -88,8 +89,17 @@ namespace Policlinica_Proiect
 
         private void buttonMeniu_Click(object sender, EventArgs e)
         {
-            meniu.Visible = !meniu.Visible; // comutare vizibilitate
-           
+            if(perspectiva=="admin")
+            meniuAdmin.Visible = !meniuAdmin.Visible; // comutare vizibilitate
+            if (perspectiva == "pacient")
+            {
+
+            }
+            if (perspectiva == "doctor")
+            {
+                meniuDoctor.Visible= !meniuDoctor.Visible;
+            }
+
         }
 
         private void buttonServicii_Click(object sender, EventArgs e)
@@ -128,6 +138,16 @@ namespace Policlinica_Proiect
                 c.Visible = false;
 
             UserControlRapoarte pv = new UserControlRapoarte();
+            pv.Dock = DockStyle.Fill;
+            main.Controls.Add(pv);
+        }
+
+        private void buttonCalendar_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in main.Controls)
+                c.Visible = false;
+
+            UserControlCalendar pv = new UserControlCalendar();
             pv.Dock = DockStyle.Fill;
             main.Controls.Add(pv);
         }

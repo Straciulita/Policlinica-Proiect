@@ -132,11 +132,23 @@
     <Compile Include="RoundedPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ucDayrs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDayrs.Designer.cs">
+      <DependentUpon>ucDayrs.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlCabinete.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControlCabinete.Designer.cs">
       <DependentUpon>UserControlCabinete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlCalendar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlCalendar.Designer.cs">
+      <DependentUpon>UserControlCalendar.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlPacienti.cs">
       <SubType>UserControl</SubType>
@@ -190,8 +202,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ucDayrs.resx">
+      <DependentUpon>ucDayrs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlCabinete.resx">
       <DependentUpon>UserControlCabinete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlCalendar.resx">
+      <DependentUpon>UserControlCalendar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlPacienti.resx">
       <DependentUpon>UserControlPacienti.cs</DependentUpon>
@@ -266,6 +284,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\doctor1jpg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_1568.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pacient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dr.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
