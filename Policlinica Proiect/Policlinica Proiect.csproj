@@ -132,6 +132,12 @@
     <Compile Include="RoundedPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ucDashBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDashBoard.Designer.cs">
+      <DependentUpon>ucDashBoard.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucDayrs.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -202,6 +208,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ucDashBoard.resx">
+      <DependentUpon>ucDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucDayrs.resx">
       <DependentUpon>ucDayrs.cs</DependentUpon>
     </EmbeddedResource>

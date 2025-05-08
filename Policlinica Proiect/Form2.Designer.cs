@@ -34,29 +34,14 @@ namespace Policlinica_Proiect
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.labelOraData = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.buttonMeniu = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.main = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.meniuDoctor = new System.Windows.Forms.Panel();
             this.meniuAdmin = new System.Windows.Forms.Panel();
-            this.buttonProgramari = new System.Windows.Forms.Button();
-            this.buttonRapoarte = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.buttonServicii = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.buttonProgram = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.buttonPacienti = new System.Windows.Forms.Button();
-            this.buttonPersonal = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -67,21 +52,38 @@ namespace Policlinica_Proiect
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.meniuDoctor = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.buttonCalendar = new System.Windows.Forms.Button();
             this.buttonProg = new System.Windows.Forms.Button();
             this.buttonPacientiDoc = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.buttonProgramari = new System.Windows.Forms.Button();
+            this.buttonRapoarte = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.buttonServicii = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.buttonProgram = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.buttonPacienti = new System.Windows.Forms.Button();
+            this.buttonPersonal = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.buttonMeniu = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.main.SuspendLayout();
-            this.meniuAdmin.SuspendLayout();
             this.meniuDoctor.SuspendLayout();
+            this.meniuAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.labelOraData);
             this.panel1.Controls.Add(this.label2);
@@ -93,15 +95,6 @@ namespace Policlinica_Proiect
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2076, 86);
             this.panel1.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            this.panel6.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.ceas;
-            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel6.Location = new System.Drawing.Point(1483, 15);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(62, 57);
-            this.panel6.TabIndex = 6;
             // 
             // labelOraData
             // 
@@ -125,46 +118,14 @@ namespace Policlinica_Proiect
             this.label2.TabIndex = 3;
             this.label2.Text = "Policlinica Sanavita";
             // 
-            // buttonMeniu
-            // 
-            this.buttonMeniu.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.buttonMeniu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonMeniu.Image = ((System.Drawing.Image)(resources.GetObject("buttonMeniu.Image")));
-            this.buttonMeniu.Location = new System.Drawing.Point(24, 10);
-            this.buttonMeniu.Name = "buttonMeniu";
-            this.buttonMeniu.Size = new System.Drawing.Size(100, 68);
-            this.buttonMeniu.TabIndex = 5;
-            this.buttonMeniu.UseVisualStyleBackColor = false;
-            this.buttonMeniu.Click += new System.EventHandler(this.buttonMeniu_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.inima;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(731, 10);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(76, 62);
-            this.panel3.TabIndex = 2;
-            // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(245, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 25);
+            this.label1.Size = new System.Drawing.Size(138, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.poza_300x300;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(173, 15);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(57, 54);
-            this.panel2.TabIndex = 0;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // timer1
             // 
@@ -193,14 +154,18 @@ namespace Policlinica_Proiect
             this.main.Size = new System.Drawing.Size(2363, 1047);
             this.main.TabIndex = 3;
             // 
-            // panel7
+            // meniuDoctor
             // 
-            this.panel7.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.IMG_1568;
-            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel7.Location = new System.Drawing.Point(1171, 475);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(658, 443);
-            this.panel7.TabIndex = 12;
+            this.meniuDoctor.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.meniuDoctor.Controls.Add(this.buttonCalendar);
+            this.meniuDoctor.Controls.Add(this.buttonProg);
+            this.meniuDoctor.Controls.Add(this.buttonPacientiDoc);
+            this.meniuDoctor.Controls.Add(this.panel9);
+            this.meniuDoctor.Controls.Add(this.button11);
+            this.meniuDoctor.Location = new System.Drawing.Point(0, 6);
+            this.meniuDoctor.Name = "meniuDoctor";
+            this.meniuDoctor.Size = new System.Drawing.Size(211, 754);
+            this.meniuDoctor.TabIndex = 16;
             // 
             // meniuAdmin
             // 
@@ -219,6 +184,232 @@ namespace Policlinica_Proiect
             this.meniuAdmin.Name = "meniuAdmin";
             this.meniuAdmin.Size = new System.Drawing.Size(211, 754);
             this.meniuAdmin.TabIndex = 1;
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label13.Location = new System.Drawing.Point(167, 463);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(599, 46);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "Unde ne gasiti?";
+            // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label12.Location = new System.Drawing.Point(880, 352);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(949, 102);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "Daca ai nevoie de o consultatie sau de o programare pentru analize, te invitam sa" +
+    " accesezi sectiunea Programari. Noi suntem aici pentru a te ajuta sa mentii o sa" +
+    "natate optima.";
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label11.Location = new System.Drawing.Point(838, 300);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(599, 46);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Ai nevoie de o programare?";
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label10.Location = new System.Drawing.Point(838, 143);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(267, 46);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Echipa noastra";
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label9.Location = new System.Drawing.Point(880, 189);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(949, 102);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Echipa noastra este formata din medici specialisti cu experienta, asistente si pe" +
+    "rsonal administrativ care se ocupa de bunastarea pacientilor.";
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label8.Location = new System.Drawing.Point(167, 137);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(267, 46);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Ce Oferim?";
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label7.Location = new System.Drawing.Point(204, 183);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(501, 297);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Servicii de consultatii medicale\r\n\r\nAnalize si investigatii\r\n\r\nTratamente persona" +
+    "lizate\r\n\r\nVaccinari si consultatii de preventie\r\n\r\nProgramari online pentru como" +
+    "ditatea ta";
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label6.Location = new System.Drawing.Point(223, 69);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(1580, 69);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Ne bucuram sa te avem alaturi! La Policlinica Sanavita, oferim servicii de sanata" +
+    "te de inalta calitate, cu o echipa de specialisti dedicati in scopul de a-ti ofe" +
+    "ri cea mai buna ingrijire medicala.";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Navy;
+            this.label5.Location = new System.Drawing.Point(55, 306);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 29);
+            this.label5.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Navy;
+            this.label4.Location = new System.Drawing.Point(55, 105);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 29);
+            this.label4.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label3.Location = new System.Drawing.Point(791, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(373, 69);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Bine ai venit!";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LightBlue;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.DarkBlue;
+            this.button1.Location = new System.Drawing.Point(389, 29);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 40);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Log Out";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonCalendar
+            // 
+            this.buttonCalendar.BackColor = System.Drawing.Color.LightBlue;
+            this.buttonCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCalendar.FlatAppearance.BorderSize = 0;
+            this.buttonCalendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCalendar.ForeColor = System.Drawing.Color.DarkBlue;
+            this.buttonCalendar.Image = ((System.Drawing.Image)(resources.GetObject("buttonCalendar.Image")));
+            this.buttonCalendar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCalendar.Location = new System.Drawing.Point(-1, 186);
+            this.buttonCalendar.Name = "buttonCalendar";
+            this.buttonCalendar.Size = new System.Drawing.Size(224, 69);
+            this.buttonCalendar.TabIndex = 16;
+            this.buttonCalendar.Text = "Calendar";
+            this.buttonCalendar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonCalendar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonCalendar.UseVisualStyleBackColor = false;
+            this.buttonCalendar.Click += new System.EventHandler(this.buttonCalendar_Click);
+            // 
+            // buttonProg
+            // 
+            this.buttonProg.BackColor = System.Drawing.Color.LightBlue;
+            this.buttonProg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonProg.FlatAppearance.BorderSize = 0;
+            this.buttonProg.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProg.ForeColor = System.Drawing.Color.DarkBlue;
+            this.buttonProg.Image = ((System.Drawing.Image)(resources.GetObject("buttonProg.Image")));
+            this.buttonProg.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonProg.Location = new System.Drawing.Point(-7, 349);
+            this.buttonProg.Name = "buttonProg";
+            this.buttonProg.Size = new System.Drawing.Size(230, 69);
+            this.buttonProg.TabIndex = 15;
+            this.buttonProg.Text = "Programari";
+            this.buttonProg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonProg.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonProg.UseVisualStyleBackColor = false;
+            // 
+            // buttonPacientiDoc
+            // 
+            this.buttonPacientiDoc.BackColor = System.Drawing.Color.LightBlue;
+            this.buttonPacientiDoc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonPacientiDoc.FlatAppearance.BorderSize = 0;
+            this.buttonPacientiDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPacientiDoc.ForeColor = System.Drawing.Color.DarkBlue;
+            this.buttonPacientiDoc.Image = ((System.Drawing.Image)(resources.GetObject("buttonPacientiDoc.Image")));
+            this.buttonPacientiDoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonPacientiDoc.Location = new System.Drawing.Point(-4, 271);
+            this.buttonPacientiDoc.Name = "buttonPacientiDoc";
+            this.buttonPacientiDoc.Size = new System.Drawing.Size(239, 69);
+            this.buttonPacientiDoc.TabIndex = 10;
+            this.buttonPacientiDoc.Text = "DashBoard";
+            this.buttonPacientiDoc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonPacientiDoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonPacientiDoc.UseVisualStyleBackColor = false;
+            this.buttonPacientiDoc.Click += new System.EventHandler(this.buttonPacientiDoc_Click);
+            // 
+            // panel9
+            // 
+            this.panel9.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.icon;
+            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel9.Location = new System.Drawing.Point(57, 22);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(80, 74);
+            this.panel9.TabIndex = 8;
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.LightBlue;
+            this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.ForeColor = System.Drawing.Color.DarkBlue;
+            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
+            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button11.Location = new System.Drawing.Point(0, 271);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(207, 69);
+            this.button11.TabIndex = 10;
+            this.button11.Text = "Pacienti";
+            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button11.UseVisualStyleBackColor = false;
+            // 
+            // panel7
+            // 
+            this.panel7.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.IMG_1568;
+            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel7.Location = new System.Drawing.Point(1171, 475);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(658, 443);
+            this.panel7.TabIndex = 12;
             // 
             // buttonProgramari
             // 
@@ -400,16 +591,6 @@ namespace Policlinica_Proiect
             this.buttonPersonal.UseVisualStyleBackColor = false;
             this.buttonPersonal.Click += new System.EventHandler(this.buttonPersonal_Click);
             // 
-            // label13
-            // 
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label13.Location = new System.Drawing.Point(167, 463);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(599, 46);
-            this.label13.TabIndex = 11;
-            this.label13.Text = "Unde ne gasiti?";
-            // 
             // panel4
             // 
             this.panel4.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.location;
@@ -419,208 +600,45 @@ namespace Policlinica_Proiect
             this.panel4.Size = new System.Drawing.Size(844, 406);
             this.panel4.TabIndex = 10;
             // 
-            // label12
+            // panel6
             // 
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label12.Location = new System.Drawing.Point(880, 352);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(949, 102);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "Daca ai nevoie de o consultatie sau de o programare pentru analize, te invitam sa" +
-    " accesezi sectiunea Programari. Noi suntem aici pentru a te ajuta sa mentii o sa" +
-    "natate optima.";
+            this.panel6.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.ceas;
+            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel6.Location = new System.Drawing.Point(1483, 15);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(62, 57);
+            this.panel6.TabIndex = 6;
             // 
-            // label11
+            // buttonMeniu
             // 
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label11.Location = new System.Drawing.Point(838, 300);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(599, 46);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "Ai nevoie de o programare?";
+            this.buttonMeniu.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.buttonMeniu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonMeniu.Image = ((System.Drawing.Image)(resources.GetObject("buttonMeniu.Image")));
+            this.buttonMeniu.Location = new System.Drawing.Point(24, 10);
+            this.buttonMeniu.Name = "buttonMeniu";
+            this.buttonMeniu.Size = new System.Drawing.Size(100, 68);
+            this.buttonMeniu.TabIndex = 5;
+            this.buttonMeniu.UseVisualStyleBackColor = false;
+            this.buttonMeniu.Click += new System.EventHandler(this.buttonMeniu_Click);
             // 
-            // label10
+            // panel3
             // 
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label10.Location = new System.Drawing.Point(838, 143);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(267, 46);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "Echipa noastra";
+            this.panel3.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.inima;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Location = new System.Drawing.Point(731, 10);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(76, 62);
+            this.panel3.TabIndex = 2;
             // 
-            // label9
+            // panel2
             // 
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label9.Location = new System.Drawing.Point(880, 189);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(949, 102);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Echipa noastra este formata din medici specialisti cu experienta, asistente si pe" +
-    "rsonal administrativ care se ocupa de bunastarea pacientilor.";
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label8.Location = new System.Drawing.Point(167, 137);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(267, 46);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Ce Oferim?";
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label7.Location = new System.Drawing.Point(204, 183);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(501, 297);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Servicii de consultatii medicale\r\n\r\nAnalize si investigatii\r\n\r\nTratamente persona" +
-    "lizate\r\n\r\nVaccinari si consultatii de preventie\r\n\r\nProgramari online pentru como" +
-    "ditatea ta";
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label6.Location = new System.Drawing.Point(223, 69);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(1580, 69);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Ne bucuram sa te avem alaturi! La Policlinica Sanavita, oferim servicii de sanata" +
-    "te de inalta calitate, cu o echipa de specialisti dedicati in scopul de a-ti ofe" +
-    "ri cea mai buna ingrijire medicala.";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Navy;
-            this.label5.Location = new System.Drawing.Point(55, 306);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 29);
-            this.label5.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Navy;
-            this.label4.Location = new System.Drawing.Point(55, 105);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 29);
-            this.label4.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label3.Location = new System.Drawing.Point(791, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(373, 69);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Bine ai venit!";
-            // 
-            // meniuDoctor
-            // 
-            this.meniuDoctor.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.meniuDoctor.Controls.Add(this.buttonCalendar);
-            this.meniuDoctor.Controls.Add(this.buttonProg);
-            this.meniuDoctor.Controls.Add(this.buttonPacientiDoc);
-            this.meniuDoctor.Controls.Add(this.panel9);
-            this.meniuDoctor.Controls.Add(this.button11);
-            this.meniuDoctor.Location = new System.Drawing.Point(0, 6);
-            this.meniuDoctor.Name = "meniuDoctor";
-            this.meniuDoctor.Size = new System.Drawing.Size(211, 754);
-            this.meniuDoctor.TabIndex = 16;
-            // 
-            // buttonCalendar
-            // 
-            this.buttonCalendar.BackColor = System.Drawing.Color.LightBlue;
-            this.buttonCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCalendar.FlatAppearance.BorderSize = 0;
-            this.buttonCalendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCalendar.ForeColor = System.Drawing.Color.DarkBlue;
-            this.buttonCalendar.Image = ((System.Drawing.Image)(resources.GetObject("buttonCalendar.Image")));
-            this.buttonCalendar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCalendar.Location = new System.Drawing.Point(-1, 186);
-            this.buttonCalendar.Name = "buttonCalendar";
-            this.buttonCalendar.Size = new System.Drawing.Size(224, 69);
-            this.buttonCalendar.TabIndex = 16;
-            this.buttonCalendar.Text = "Calendar";
-            this.buttonCalendar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonCalendar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonCalendar.UseVisualStyleBackColor = false;
-            this.buttonCalendar.Click += new System.EventHandler(this.buttonCalendar_Click);
-            // 
-            // buttonProg
-            // 
-            this.buttonProg.BackColor = System.Drawing.Color.LightBlue;
-            this.buttonProg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonProg.FlatAppearance.BorderSize = 0;
-            this.buttonProg.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProg.ForeColor = System.Drawing.Color.DarkBlue;
-            this.buttonProg.Image = ((System.Drawing.Image)(resources.GetObject("buttonProg.Image")));
-            this.buttonProg.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonProg.Location = new System.Drawing.Point(-7, 349);
-            this.buttonProg.Name = "buttonProg";
-            this.buttonProg.Size = new System.Drawing.Size(230, 69);
-            this.buttonProg.TabIndex = 15;
-            this.buttonProg.Text = "Programari";
-            this.buttonProg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonProg.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonProg.UseVisualStyleBackColor = false;
-            // 
-            // buttonPacientiDoc
-            // 
-            this.buttonPacientiDoc.BackColor = System.Drawing.Color.LightBlue;
-            this.buttonPacientiDoc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonPacientiDoc.FlatAppearance.BorderSize = 0;
-            this.buttonPacientiDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPacientiDoc.ForeColor = System.Drawing.Color.DarkBlue;
-            this.buttonPacientiDoc.Image = ((System.Drawing.Image)(resources.GetObject("buttonPacientiDoc.Image")));
-            this.buttonPacientiDoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonPacientiDoc.Location = new System.Drawing.Point(3, 271);
-            this.buttonPacientiDoc.Name = "buttonPacientiDoc";
-            this.buttonPacientiDoc.Size = new System.Drawing.Size(211, 69);
-            this.buttonPacientiDoc.TabIndex = 10;
-            this.buttonPacientiDoc.Text = "Pacienti";
-            this.buttonPacientiDoc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonPacientiDoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonPacientiDoc.UseVisualStyleBackColor = false;
-            // 
-            // panel9
-            // 
-            this.panel9.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.icon;
-            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel9.Location = new System.Drawing.Point(57, 22);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(80, 74);
-            this.panel9.TabIndex = 8;
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.LightBlue;
-            this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.DarkBlue;
-            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(0, 271);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(207, 69);
-            this.button11.TabIndex = 10;
-            this.button11.Text = "Pacienti";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button11.UseVisualStyleBackColor = false;
+            this.panel2.BackgroundImage = global::Policlinica_Proiect.Properties.Resources.poza_300x300;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(173, 15);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(57, 54);
+            this.panel2.TabIndex = 0;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // Form2
             // 
@@ -638,8 +656,8 @@ namespace Policlinica_Proiect
             this.panel1.PerformLayout();
             this.main.ResumeLayout(false);
             this.main.PerformLayout();
-            this.meniuAdmin.ResumeLayout(false);
             this.meniuDoctor.ResumeLayout(false);
+            this.meniuAdmin.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -686,5 +704,6 @@ namespace Policlinica_Proiect
         private Panel panel9;
         private Button button11;
         private Button buttonCalendar;
+        private Button button1;
     }
 }

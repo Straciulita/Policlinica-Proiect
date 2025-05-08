@@ -151,5 +151,25 @@ namespace Policlinica_Proiect
             pv.Dock = DockStyle.Fill;
             main.Controls.Add(pv);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Închide Form2
+            this.Close();
+
+            // Creează o instanță a Form1 și o deschide
+            Form1 form1 = new Form1();
+            form1.Show();
+        }
+
+        private void buttonPacientiDoc_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in main.Controls)
+                c.Visible = false;
+
+            ucDashBoard pv = new ucDashBoard();
+            pv.Dock = DockStyle.Fill;
+            main.Controls.Add(pv);
+        }
     }
 }
