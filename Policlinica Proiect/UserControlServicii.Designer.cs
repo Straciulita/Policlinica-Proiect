@@ -35,6 +35,8 @@
             this.button7 = new System.Windows.Forms.Button();
             this.textBoxCNP = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.checkBoxPrenumeD = new System.Windows.Forms.CheckBox();
+            this.checkBoxPrenumeC = new System.Windows.Forms.CheckBox();
             this.button8 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.checkBoxNumeD = new System.Windows.Forms.CheckBox();
@@ -56,7 +58,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.labelDetalii = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -68,8 +69,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSearch = new System.Windows.Forms.Button();
-            this.checkBoxPrenumeD = new System.Windows.Forms.CheckBox();
-            this.checkBoxPrenumeC = new System.Windows.Forms.CheckBox();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -149,6 +148,30 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(841, 421);
             this.panel3.TabIndex = 35;
+            // 
+            // checkBoxPrenumeD
+            // 
+            this.checkBoxPrenumeD.AutoSize = true;
+            this.checkBoxPrenumeD.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxPrenumeD.ForeColor = System.Drawing.Color.DarkBlue;
+            this.checkBoxPrenumeD.Location = new System.Drawing.Point(568, 150);
+            this.checkBoxPrenumeD.Name = "checkBoxPrenumeD";
+            this.checkBoxPrenumeD.Size = new System.Drawing.Size(79, 33);
+            this.checkBoxPrenumeD.TabIndex = 30;
+            this.checkBoxPrenumeD.Text = "Pret";
+            this.checkBoxPrenumeD.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxPrenumeC
+            // 
+            this.checkBoxPrenumeC.AutoSize = true;
+            this.checkBoxPrenumeC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxPrenumeC.ForeColor = System.Drawing.Color.DarkBlue;
+            this.checkBoxPrenumeC.Location = new System.Drawing.Point(102, 145);
+            this.checkBoxPrenumeC.Name = "checkBoxPrenumeC";
+            this.checkBoxPrenumeC.Size = new System.Drawing.Size(79, 33);
+            this.checkBoxPrenumeC.TabIndex = 29;
+            this.checkBoxPrenumeC.Text = "Pret";
+            this.checkBoxPrenumeC.UseVisualStyleBackColor = true;
             // 
             // button8
             // 
@@ -412,23 +435,6 @@
             this.label21.TabIndex = 31;
             this.label21.Text = "Servicii";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.LightBlue;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(907, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 58);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Afisare";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // textBoxSearch
             // 
             this.textBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -557,30 +563,6 @@
             this.buttonSearch.UseVisualStyleBackColor = false;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
-            // checkBoxPrenumeD
-            // 
-            this.checkBoxPrenumeD.AutoSize = true;
-            this.checkBoxPrenumeD.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxPrenumeD.ForeColor = System.Drawing.Color.DarkBlue;
-            this.checkBoxPrenumeD.Location = new System.Drawing.Point(568, 150);
-            this.checkBoxPrenumeD.Name = "checkBoxPrenumeD";
-            this.checkBoxPrenumeD.Size = new System.Drawing.Size(79, 33);
-            this.checkBoxPrenumeD.TabIndex = 30;
-            this.checkBoxPrenumeD.Text = "Pret";
-            this.checkBoxPrenumeD.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxPrenumeC
-            // 
-            this.checkBoxPrenumeC.AutoSize = true;
-            this.checkBoxPrenumeC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxPrenumeC.ForeColor = System.Drawing.Color.DarkBlue;
-            this.checkBoxPrenumeC.Location = new System.Drawing.Point(102, 145);
-            this.checkBoxPrenumeC.Name = "checkBoxPrenumeC";
-            this.checkBoxPrenumeC.Size = new System.Drawing.Size(79, 33);
-            this.checkBoxPrenumeC.TabIndex = 29;
-            this.checkBoxPrenumeC.Text = "Pret";
-            this.checkBoxPrenumeC.UseVisualStyleBackColor = true;
-            // 
             // UserControlServicii
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -589,7 +571,6 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.dataGridView1);
@@ -637,7 +618,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label labelDetalii;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.DataGridView dataGridView1;

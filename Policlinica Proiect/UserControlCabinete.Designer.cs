@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlCabinete));
             this.label21 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -42,9 +41,9 @@
             this.button5 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.labelDetalii = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.labelDetalii = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -60,23 +59,6 @@
             this.label21.Size = new System.Drawing.Size(176, 42);
             this.label21.TabIndex = 37;
             this.label21.Text = "Cabinete";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.LightBlue;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(507, 639);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 58);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Afisare";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonSearch
             // 
@@ -209,6 +191,17 @@
             this.panel7.Size = new System.Drawing.Size(523, 386);
             this.panel7.TabIndex = 38;
             // 
+            // labelDetalii
+            // 
+            this.labelDetalii.AutoSize = true;
+            this.labelDetalii.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDetalii.ForeColor = System.Drawing.Color.DarkBlue;
+            this.labelDetalii.Location = new System.Drawing.Point(46, 26);
+            this.labelDetalii.Name = "labelDetalii";
+            this.labelDetalii.Size = new System.Drawing.Size(98, 32);
+            this.labelDetalii.TabIndex = 0;
+            this.labelDetalii.Text = "detalii ";
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.LightBlue;
@@ -243,23 +236,11 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // labelDetalii
-            // 
-            this.labelDetalii.AutoSize = true;
-            this.labelDetalii.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDetalii.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labelDetalii.Location = new System.Drawing.Point(46, 26);
-            this.labelDetalii.Name = "labelDetalii";
-            this.labelDetalii.Size = new System.Drawing.Size(98, 32);
-            this.labelDetalii.TabIndex = 0;
-            this.labelDetalii.Text = "detalii ";
-            // 
             // UserControlCabinete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.panel7);
@@ -282,7 +263,6 @@
         #endregion
 
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.DataGridView dataGridView1;

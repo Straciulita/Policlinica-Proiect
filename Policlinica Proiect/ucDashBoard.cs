@@ -22,6 +22,25 @@ namespace Policlinica_Proiect
         {
             InitializeComponent();
             connection = dbConnection.GetConnection();
+            try
+            {
+
+
+                string query = @"SELECT * FROM Policlinica.vw_prog_detalii 
+                         WHERE DATE(Data) = CURDATE()";
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                // Asumând că ai un DataGridView numit dataGridView1 pe controlul tău
+                dataGridView1.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Eroare la afișare: " + ex.Message);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -72,8 +91,7 @@ namespace Policlinica_Proiect
                 FROM Policlinica.Programari pr
                 JOIN Policlinica.Pacient p ON pr.idPacient = p.idPacient
                 LEFT JOIN Policlinica.Consultatie c ON pr.idProgramare = c.idProgramare
-                WHERE p.nume = @nume AND p.prenume = @prenume AND pr.data = @data AND pr.ora = @ora
-                LIMIT 1";
+                WHERE p.nume = @nume AND p.prenume = @prenume AND pr.data = @data AND pr.ora = @ora";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
@@ -84,12 +102,26 @@ namespace Policlinica_Proiect
 
                         using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            if (reader.Read())
-                            {
-                                int varsta = Convert.ToInt32(reader["varsta"]);
-                                string diagnostic = reader["diagnostic"] != DBNull.Value ? reader["diagnostic"].ToString() : "Fără diagnostic";
+                            int varsta = -1;
+                            List<string> diagnostice = new List<string>();
 
-                                labelDetalii.Text = $"Nume: {nume} {prenume}\nVârstă: {varsta}\nServiciu: {serviciu}\nDiagnostic: {diagnostic}";
+                            while (reader.Read())
+                            {
+                                if (varsta == -1)
+                                    varsta = Convert.ToInt32(reader["varsta"]);
+
+                                string diagnostic = reader["diagnostic"] != DBNull.Value
+                                    ? reader["diagnostic"].ToString()
+                                    : "Fără diagnostic";
+
+                                if (!diagnostice.Contains(diagnostic))
+                                    diagnostice.Add(diagnostic);
+                            }
+
+                            if (varsta != -1)
+                            {
+                                string diagText = string.Join("\n- ", diagnostice);
+                                labelDetalii.Text = $"Nume: {nume} {prenume}\nVârstă: {varsta}\nServiciu: {serviciu}\nDiagnostice:\n- {diagText}";
                             }
                             else
                             {
@@ -104,6 +136,7 @@ namespace Policlinica_Proiect
                 }
             }
         }
+
 
         int idProgramareSelectat = -1;
 

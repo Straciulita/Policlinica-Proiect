@@ -22,6 +22,7 @@ namespace Policlinica_Proiect
         {
             InitializeComponent();
             connection = dbConnection.GetConnection();
+            helper.AfiseazaTabela("Pacient", dataGridView1, connection);
             ExclusivitateCheckBoxuri(checkBoxNumeC, checkBoxNumeD);
             ExclusivitateCheckBoxuri(checkBoxPrenumeC, checkBoxPrenumeD);
             ExclusivitateCheckBoxuri(checkBoxVarstaC, checkBoxVarstaD);
@@ -45,7 +46,7 @@ namespace Policlinica_Proiect
 
         private void button1_Click(object sender, EventArgs e)
         {
-            helper.AfiseazaTabela("Pacient", dataGridView1, connection);
+           
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

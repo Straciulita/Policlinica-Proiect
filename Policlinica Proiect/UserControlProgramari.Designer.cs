@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label21 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -37,6 +36,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBoxIdProg = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.textBoxId = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
@@ -51,13 +52,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxIdPacient = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dateTimePickerData = new System.Windows.Forms.DateTimePicker();
-            this.textBoxIdProg = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxIdServ = new System.Windows.Forms.TextBox();
             this.textBoxIdPr = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.dateTimePickerData = new System.Windows.Forms.DateTimePicker();
+            this.textBoxIdServ = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel7.SuspendLayout();
@@ -75,23 +74,6 @@
             this.label21.Size = new System.Drawing.Size(463, 42);
             this.label21.TabIndex = 37;
             this.label21.Text = "Programari si diagnostice";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.LightBlue;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1651, 76);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 58);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Afisare";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -197,6 +179,26 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(561, 421);
             this.panel2.TabIndex = 40;
+            // 
+            // textBoxIdProg
+            // 
+            this.textBoxIdProg.Enabled = false;
+            this.textBoxIdProg.Location = new System.Drawing.Point(173, 70);
+            this.textBoxIdProg.Name = "textBoxIdProg";
+            this.textBoxIdProg.Size = new System.Drawing.Size(373, 22);
+            this.textBoxIdProg.TabIndex = 29;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Enabled = false;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label2.Location = new System.Drawing.Point(3, 68);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(161, 29);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "IdProgramare";
             // 
             // textBoxId
             // 
@@ -356,53 +358,6 @@
             this.panel1.Size = new System.Drawing.Size(530, 421);
             this.panel1.TabIndex = 41;
             // 
-            // dateTimePickerData
-            // 
-            this.dateTimePickerData.Location = new System.Drawing.Point(154, 185);
-            this.dateTimePickerData.Name = "dateTimePickerData";
-            this.dateTimePickerData.Size = new System.Drawing.Size(349, 22);
-            this.dateTimePickerData.TabIndex = 32;
-            // 
-            // textBoxIdProg
-            // 
-            this.textBoxIdProg.Enabled = false;
-            this.textBoxIdProg.Location = new System.Drawing.Point(173, 70);
-            this.textBoxIdProg.Name = "textBoxIdProg";
-            this.textBoxIdProg.Size = new System.Drawing.Size(373, 22);
-            this.textBoxIdProg.TabIndex = 29;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Enabled = false;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label2.Location = new System.Drawing.Point(3, 68);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 29);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "IdProgramare";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Enabled = false;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label1.Location = new System.Drawing.Point(18, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 29);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "IdServiciu";
-            // 
-            // textBoxIdServ
-            // 
-            this.textBoxIdServ.Enabled = false;
-            this.textBoxIdServ.Location = new System.Drawing.Point(154, 70);
-            this.textBoxIdServ.Name = "textBoxIdServ";
-            this.textBoxIdServ.Size = new System.Drawing.Size(349, 22);
-            this.textBoxIdServ.TabIndex = 27;
-            // 
             // textBoxIdPr
             // 
             this.textBoxIdPr.Enabled = false;
@@ -423,6 +378,33 @@
             this.label6.TabIndex = 33;
             this.label6.Text = "Id";
             // 
+            // dateTimePickerData
+            // 
+            this.dateTimePickerData.Location = new System.Drawing.Point(154, 185);
+            this.dateTimePickerData.Name = "dateTimePickerData";
+            this.dateTimePickerData.Size = new System.Drawing.Size(349, 22);
+            this.dateTimePickerData.TabIndex = 32;
+            // 
+            // textBoxIdServ
+            // 
+            this.textBoxIdServ.Enabled = false;
+            this.textBoxIdServ.Location = new System.Drawing.Point(154, 70);
+            this.textBoxIdServ.Name = "textBoxIdServ";
+            this.textBoxIdServ.Size = new System.Drawing.Size(349, 22);
+            this.textBoxIdServ.TabIndex = 27;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Enabled = false;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label1.Location = new System.Drawing.Point(18, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 29);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "IdServiciu";
+            // 
             // UserControlProgramari
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -434,7 +416,6 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "UserControlProgramari";
             this.Size = new System.Drawing.Size(2057, 963);
@@ -453,7 +434,6 @@
 
         #endregion
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Panel panel7;

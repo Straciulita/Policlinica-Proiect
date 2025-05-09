@@ -21,6 +21,8 @@ namespace Policlinica_Proiect
 
             InitializeComponent();
             connection = dbConnection.GetConnection();
+            helper.AfiseazaTabela("Programari", dataGridView1, connection);
+            helper.AfiseazaTabela("Consultatie", dataGridView2, connection);
         }
 
         private void button1_Click(object sender, EventArgs e)

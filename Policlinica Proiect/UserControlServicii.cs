@@ -19,7 +19,9 @@ namespace Policlinica_Proiect
         public UserControlServicii()
         {
             InitializeComponent();
+            
             connection = dbConnection.GetConnection();
+            helper.AfiseazaTabela("servicii", dataGridView1, connection);
             ExclusivitateCheckBoxuri(checkBoxNumeC, checkBoxNumeD);
             ExclusivitateCheckBoxuri(checkBoxPrenumeC, checkBoxPrenumeD);
             helper.PopuleazaComboBoxCuJoin(
@@ -49,7 +51,7 @@ namespace Policlinica_Proiect
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            helper.AfiseazaTabela("servicii", dataGridView1, connection);
+            
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

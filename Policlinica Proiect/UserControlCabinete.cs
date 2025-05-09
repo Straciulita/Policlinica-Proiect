@@ -20,11 +20,12 @@ namespace Policlinica_Proiect
         {
             InitializeComponent();
             connection = dbConnection.GetConnection();
+            helper.AfiseazaTabela("Cabinet", dataGridView1, connection);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            helper.AfiseazaTabela("Cabinet", dataGridView1, connection);
+            
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)

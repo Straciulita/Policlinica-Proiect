@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -20,14 +21,23 @@ namespace Policlinica_Proiect
         DatabaseConnection dbConnection = new DatabaseConnection();
 
         private MySqlConnection connection;
-        
+       
+
 
         public Form2(string perspectiva)
         {
             InitializeComponent();
             this.perspectiva = perspectiva;
             this.label1.Text = perspectiva;
-            
+            if (perspectiva == "pacient")
+            {
+                button6.Visible = false;
+            }
+            if (perspectiva != "pacient")
+            {
+                label14.Visible = false;
+            }
+
             meniuAdmin.Visible = false;
             meniuDoctor.Visible = false;
         }
@@ -91,13 +101,14 @@ namespace Policlinica_Proiect
         {
             if(perspectiva=="admin")
             meniuAdmin.Visible = !meniuAdmin.Visible; // comutare vizibilitate
-            if (perspectiva == "pacient")
+           
+            else if (perspectiva == "doctor")
             {
-
+                meniuDoctor.Visible = !meniuDoctor.Visible;
             }
-            if (perspectiva == "doctor")
+            else
             {
-                meniuDoctor.Visible= !meniuDoctor.Visible;
+                MeniuPacient.Visible = !MeniuPacient.Visible;
             }
 
         }
@@ -168,6 +179,27 @@ namespace Policlinica_Proiect
                 c.Visible = false;
 
             ucDashBoard pv = new ucDashBoard();
+            pv.Dock = DockStyle.Fill;
+            main.Controls.Add(pv);
+        }
+
+        private void button6_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(label14, "Pentru a accesa istoricul trebuie sa iti faci cont!");
+            
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in main.Controls)
+                c.Visible = false;
+
+            ucProgramare pv = new ucProgramare(perspectiva);
             pv.Dock = DockStyle.Fill;
             main.Controls.Add(pv);
         }

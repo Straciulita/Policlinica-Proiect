@@ -40,22 +40,21 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.labelDetalii = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.labelDetalii = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBoxProg = new System.Windows.Forms.ComboBox();
+            this.comboBoxPersonal = new System.Windows.Forms.ComboBox();
             this.textBoxIdOrar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBoxPersonal = new System.Windows.Forms.ComboBox();
-            this.comboBoxProg = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -196,6 +195,17 @@
             this.panel7.Size = new System.Drawing.Size(469, 386);
             this.panel7.TabIndex = 32;
             // 
+            // labelDetalii
+            // 
+            this.labelDetalii.AutoSize = true;
+            this.labelDetalii.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDetalii.ForeColor = System.Drawing.Color.DarkBlue;
+            this.labelDetalii.Location = new System.Drawing.Point(46, 26);
+            this.labelDetalii.Name = "labelDetalii";
+            this.labelDetalii.Size = new System.Drawing.Size(91, 32);
+            this.labelDetalii.TabIndex = 0;
+            this.labelDetalii.Text = "detalii";
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.LightBlue;
@@ -230,17 +240,6 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // labelDetalii
-            // 
-            this.labelDetalii.AutoSize = true;
-            this.labelDetalii.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDetalii.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labelDetalii.Location = new System.Drawing.Point(46, 26);
-            this.labelDetalii.Name = "labelDetalii";
-            this.labelDetalii.Size = new System.Drawing.Size(91, 32);
-            this.labelDetalii.TabIndex = 0;
-            this.labelDetalii.Text = "detalii";
-            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -251,23 +250,6 @@
             this.label21.Size = new System.Drawing.Size(296, 42);
             this.label21.TabIndex = 31;
             this.label21.Text = "Program si Orar";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.LightBlue;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1746, 176);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 58);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Afisare";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -318,6 +300,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(544, 421);
             this.panel1.TabIndex = 35;
+            // 
+            // comboBoxProg
+            // 
+            this.comboBoxProg.FormattingEnabled = true;
+            this.comboBoxProg.Location = new System.Drawing.Point(177, 65);
+            this.comboBoxProg.Name = "comboBoxProg";
+            this.comboBoxProg.Size = new System.Drawing.Size(344, 24);
+            this.comboBoxProg.TabIndex = 31;
+            // 
+            // comboBoxPersonal
+            // 
+            this.comboBoxPersonal.FormattingEnabled = true;
+            this.comboBoxPersonal.Location = new System.Drawing.Point(177, 105);
+            this.comboBoxPersonal.Name = "comboBoxPersonal";
+            this.comboBoxPersonal.Size = new System.Drawing.Size(344, 24);
+            this.comboBoxPersonal.TabIndex = 30;
             // 
             // textBoxIdOrar
             // 
@@ -395,22 +393,6 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "IdProg";
             // 
-            // comboBoxPersonal
-            // 
-            this.comboBoxPersonal.FormattingEnabled = true;
-            this.comboBoxPersonal.Location = new System.Drawing.Point(177, 105);
-            this.comboBoxPersonal.Name = "comboBoxPersonal";
-            this.comboBoxPersonal.Size = new System.Drawing.Size(344, 24);
-            this.comboBoxPersonal.TabIndex = 30;
-            // 
-            // comboBoxProg
-            // 
-            this.comboBoxProg.FormattingEnabled = true;
-            this.comboBoxProg.Location = new System.Drawing.Point(177, 65);
-            this.comboBoxProg.Name = "comboBoxProg";
-            this.comboBoxProg.Size = new System.Drawing.Size(344, 24);
-            this.comboBoxProg.TabIndex = 31;
-            // 
             // UserControlProgramcs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -422,7 +404,6 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "UserControlProgramcs";
             this.Size = new System.Drawing.Size(2067, 942);
@@ -457,7 +438,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label labelDetalii;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Panel panel1;

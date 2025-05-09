@@ -47,6 +47,7 @@ namespace Policlinica_Proiect
             ExclusivitateCheckBoxuri(checkBoxPrenumeC, checkBoxPrenumeD);
             ExclusivitateCheckBoxuri(checkBoxSalariuC, checkBoxSalariuD);
             ExclusivitateCheckBoxuri(checkBoxDataAngjC, checkBoxDataAngjD);
+            helper.AfiseazaTabela("Personal", dataGridView1, connection);
 
         }
         private void ExclusivitateCheckBoxuri(CheckBox cb1, CheckBox cb2)
@@ -66,7 +67,7 @@ namespace Policlinica_Proiect
         private void button1_Click(object sender, EventArgs e)
         {
             
-            helper.AfiseazaTabela("Personal", dataGridView1, connection);
+            
         }
         private void buttonSearch_Click(object sender, EventArgs e)
         {

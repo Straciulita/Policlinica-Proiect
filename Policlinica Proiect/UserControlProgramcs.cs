@@ -20,6 +20,8 @@ namespace Policlinica_Proiect
         {
             InitializeComponent();
             connection = dbConnection.GetConnection();
+            helper.AfiseazaTabela("Program", dataGridView1, connection);
+            helper.AfiseazaTabela("Orar", dataGridView2, connection);
             helper.PopuleazaComboBoxCuJoin(
     comboBoxPersonal,
     "personal",
