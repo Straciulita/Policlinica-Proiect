@@ -101,7 +101,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.DarkBlue;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1461, 830);
+            this.button1.Location = new System.Drawing.Point(1584, 836);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(360, 58);
             this.button1.TabIndex = 27;
@@ -130,7 +130,7 @@
             this.roundedPanel3.Controls.Add(this.label8);
             this.roundedPanel3.Controls.Add(this.textBoxNume);
             this.roundedPanel3.Controls.Add(this.label7);
-            this.roundedPanel3.Location = new System.Drawing.Point(1234, 74);
+            this.roundedPanel3.Location = new System.Drawing.Point(1328, 74);
             this.roundedPanel3.Name = "roundedPanel3";
             this.roundedPanel3.ShadowColor = System.Drawing.Color.Black;
             this.roundedPanel3.ShadowOffset = 5;
@@ -278,11 +278,11 @@
             this.roundedPanel2.Controls.Add(this.textBox1);
             this.roundedPanel2.Controls.Add(this.dateTimePicker1);
             this.roundedPanel2.Controls.Add(this.label5);
-            this.roundedPanel2.Location = new System.Drawing.Point(690, 74);
+            this.roundedPanel2.Location = new System.Drawing.Point(750, 74);
             this.roundedPanel2.Name = "roundedPanel2";
             this.roundedPanel2.ShadowColor = System.Drawing.Color.Black;
             this.roundedPanel2.ShadowOffset = 5;
-            this.roundedPanel2.Size = new System.Drawing.Size(520, 390);
+            this.roundedPanel2.Size = new System.Drawing.Size(544, 390);
             this.roundedPanel2.TabIndex = 36;
             // 
             // label6
@@ -337,7 +337,7 @@
             this.roundedPanel1.Name = "roundedPanel1";
             this.roundedPanel1.ShadowColor = System.Drawing.Color.Black;
             this.roundedPanel1.ShadowOffset = 5;
-            this.roundedPanel1.Size = new System.Drawing.Size(643, 864);
+            this.roundedPanel1.Size = new System.Drawing.Size(695, 864);
             this.roundedPanel1.TabIndex = 35;
             // 
             // panel3
@@ -595,7 +595,7 @@
             this.buttonSearch.BackColor = System.Drawing.Color.White;
             this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonSearch.Image = ((System.Drawing.Image)(resources.GetObject("buttonSearch.Image")));
-            this.buttonSearch.Location = new System.Drawing.Point(566, 4);
+            this.buttonSearch.Location = new System.Drawing.Point(546, 4);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(54, 51);
             this.buttonSearch.TabIndex = 32;
@@ -621,7 +621,7 @@
             this.Controls.Add(this.roundedPanel1);
             this.Controls.Add(this.label21);
             this.Name = "ucProgramare";
-            this.Size = new System.Drawing.Size(1865, 950);
+            this.Size = new System.Drawing.Size(1988, 950);
             this.roundedPanel3.ResumeLayout(false);
             this.roundedPanel3.PerformLayout();
             this.roundedPanel2.ResumeLayout(false);

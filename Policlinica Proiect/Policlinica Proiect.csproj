@@ -144,6 +144,12 @@
     <Compile Include="ucDayrs.Designer.cs">
       <DependentUpon>ucDayrs.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucIstoric.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucIstoric.Designer.cs">
+      <DependentUpon>ucIstoric.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucProgramare.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucDayrs.resx">
       <DependentUpon>ucDayrs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucIstoric.resx">
+      <DependentUpon>ucIstoric.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucProgramare.resx">
       <DependentUpon>ucProgramare.cs</DependentUpon>

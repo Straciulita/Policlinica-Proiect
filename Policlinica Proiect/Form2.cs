@@ -203,5 +203,15 @@ namespace Policlinica_Proiect
             pv.Dock = DockStyle.Fill;
             main.Controls.Add(pv);
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in main.Controls)
+                c.Visible = false;
+
+            ucIstoric pv = new ucIstoric(perspectiva);
+            pv.Dock = DockStyle.Fill;
+            main.Controls.Add(pv);
+        }
     }
 }

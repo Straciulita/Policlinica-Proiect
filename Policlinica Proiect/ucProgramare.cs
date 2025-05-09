@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -267,9 +268,7 @@ namespace Policlinica_Proiect
                 using (MySqlCommand cmd = new MySqlCommand(queryServiciu, connection))
                 {
                     cmd.Parameters.AddWithValue("@denumire", denumireServiciu);
-                   
                     object result = cmd.ExecuteScalar();
-                   
 
                     if (result != null && result != DBNull.Value)
                         idServiciu = Convert.ToInt32(result);
@@ -287,9 +286,7 @@ namespace Policlinica_Proiect
                 {
                     cmd.Parameters.AddWithValue("@nume", textBoxNume.Text);
                     cmd.Parameters.AddWithValue("@prenume", textBoxPrenume.Text);
-                   
                     object result = cmd.ExecuteScalar();
-                   
 
                     if (result != null && result != DBNull.Value)
                         idPacient = Convert.ToInt32(result);
@@ -311,7 +308,7 @@ namespace Policlinica_Proiect
 
                 // Inserare în tabela Programari
                 string insertQuery = @"INSERT INTO Programari (idServiciu, idPacient, ora, data)
-                               VALUES (@idServiciu, @idPacient, @ora, @data)";
+                        VALUES (@idServiciu, @idPacient, @ora, @data)";
 
                 using (MySqlCommand cmd = new MySqlCommand(insertQuery, connection))
                 {
@@ -320,19 +317,79 @@ namespace Policlinica_Proiect
                     cmd.Parameters.AddWithValue("@ora", ora);
                     cmd.Parameters.AddWithValue("@data", data);
 
-                    
                     cmd.ExecuteNonQuery();
-                    
                 }
 
                 MessageBox.Show("Programarea a fost adăugată cu succes!");
+
+                // Întrebare descărcare factură
+                DialogResult rezultat = MessageBox.Show("Dorești să descarci factura?", "Factura", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (rezultat == DialogResult.Yes)
+                {
+                    try
+                    {
+                        // Obținere preț
+                        decimal pret = 0;
+                        string queryPret = "SELECT Pret FROM Servicii WHERE idServiciu = @idServiciu";
+                        using (MySqlCommand cmdPret = new MySqlCommand(queryPret, connection))
+                        {
+                            cmdPret.Parameters.AddWithValue("@idServiciu", idServiciu);
+                            object resultPret = cmdPret.ExecuteScalar();
+                            if (resultPret != null && resultPret != DBNull.Value)
+                                pret = Convert.ToDecimal(resultPret);
+                        }
+
+                        // Generare și deschidere factură
+                        string caleFactura = GenereazaFactura(idPacient, textBoxNume.Text, textBoxPrenume.Text, denumireServiciu, data, ora, pret);
+                        System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+                        {
+                            FileName = caleFactura,
+                            UseShellExecute = true
+                        });
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Eroare la generarea/deschiderea facturii: " + ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
             catch (Exception ex)
             {
-                
                 MessageBox.Show("Eroare: " + ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private string GenereazaFactura(int idPacient, string nume, string prenume, string denumireServiciu, DateTime data, TimeSpan ora, decimal pret)
+        {
+            string caleFactura = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
+                $"Factura_{nume}_{prenume}_{DateTime.Now:yyyyMMddHHmmss}.txt"
+            );
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("=================================================");
+            sb.AppendLine("                Policlinica SANAVITA             ");
+            sb.AppendLine("   Strada Grădina Veche NR 90, Galați 800552     ");
+            sb.AppendLine("           Telefon: 0747 945 531                 ");
+            sb.AppendLine("=================================================\n");
+
+            sb.AppendLine($"Data emiterii: {DateTime.Now}");
+            sb.AppendLine($"Factura pentru: {nume} {prenume} (ID: {idPacient})");
+            sb.AppendLine($"Serviciu programat: {denumireServiciu}");
+            sb.AppendLine($"Data programării: {data:dd.MM.yyyy}");
+            sb.AppendLine($"Ora programării: {ora}");
+            sb.AppendLine($"Preț: {pret:C}");  // Format valutar
+
+            sb.AppendLine("\n=================================================");
+            sb.AppendLine("       Vă mulțumim că ați ales SANAVITA!         ");
+            sb.AppendLine("=================================================");
+
+            File.WriteAllText(caleFactura, sb.ToString());
+
+            return caleFactura;
+        }
+
 
     }
 }
